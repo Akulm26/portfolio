@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-50/30 blur-[100px] -z-10 rounded-full"></div>
       
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div className="order-2 md:order-1">
+        <div className="order-1 md:order-2">
           <h1 className="font-display text-5xl md:text-7xl font-extrabold text-text-primary leading-[1.1] mb-6 tracking-tight">
             I build AI-powered products that <span className="text-accent italic">people actually use.</span>
           </h1>
@@ -145,13 +145,13 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="order-1 md:order-2 flex justify-center md:justify-end">
+        <div className="order-2 md:order-1 flex justify-center md:justify-start">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-accent rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             <div className="relative w-72 h-72 md:w-96 md:h-96 bg-white rounded-3xl overflow-hidden border border-accent/20 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
-                alt="Akul Malhotra Portrait" 
+                src="./screenshot.png" 
+                alt="Portfolio Screenshot" 
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
