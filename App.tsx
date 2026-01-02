@@ -20,7 +20,6 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Scrollspy logic
       const sections = navLinks.map(link => link.href.substring(1));
       let current = '';
 
@@ -28,7 +27,6 @@ const Header: React.FC = () => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Adjust threshold to feel natural (e.g., when the section is near the top)
           if (rect.top <= 150) {
             current = section;
           }
@@ -60,7 +58,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="font-display font-bold text-xl tracking-tight text-accent" onClick={(e) => handleLinkClick(e, '#')}>
           AKUL <span className="text-text-primary">MALHOTRA</span>
@@ -79,7 +77,7 @@ const Header: React.FC = () => {
               <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${activeSection === link.href.substring(1) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </a>
           ))}
-          <a href="#connect" onClick={(e) => handleLinkClick(e, '#connect')} className="bg-accent text-background-primary px-5 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-accent/20">
+          <a href="#connect" onClick={(e) => handleLinkClick(e, '#connect')} className="bg-accent text-white px-5 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-accent/20">
             Let's Talk
           </a>
         </div>
@@ -95,7 +93,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Nav Overlay */}
-      <div className={`md:hidden fixed inset-0 z-40 bg-background-primary transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`md:hidden fixed inset-0 z-40 bg-white transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col p-12 space-y-8 h-full justify-center">
           {navLinks.map((link) => (
             <a 
@@ -109,7 +107,7 @@ const Header: React.FC = () => {
           ))}
           <a 
             href="#connect" 
-            className="text-accent text-2xl font-bold pt-8 border-t border-white/10"
+            className="text-accent text-2xl font-bold pt-8 border-t border-slate-100"
             onClick={(e) => handleLinkClick(e, '#connect')}
           >
             Start a Conversation →
@@ -122,20 +120,12 @@ const Header: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-12 overflow-hidden relative">
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 blur-[120px] -z-10 rounded-full"></div>
-      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-500/5 blur-[100px] -z-10 rounded-full"></div>
+    <section className="min-h-screen flex items-center pt-24 pb-12 overflow-hidden relative bg-white">
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-100/50 blur-[120px] -z-10 rounded-full"></div>
+      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-50/30 blur-[100px] -z-10 rounded-full"></div>
       
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1">
-          <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 text-accent px-4 py-1.5 rounded-full text-xs font-bold mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-            </span>
-            <span>Open to Opportunities • India → Open to Relocation</span>
-          </div>
-          
           <h1 className="font-display text-5xl md:text-7xl font-extrabold text-text-primary leading-[1.1] mb-6 tracking-tight">
             I build AI-powered products that <span className="text-accent italic">people actually use.</span>
           </h1>
@@ -145,11 +135,11 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#work" className="bg-accent text-background-primary px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:shadow-[0_0_20px_rgba(78,205,196,0.4)] transition-all">
+            <a href="#work" className="bg-accent text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:shadow-xl hover:shadow-accent/30 transition-all">
               <span>View My Work</span>
               <ArrowRight size={18} />
             </a>
-            <a href="#connect" className="bg-background-secondary border border-white/10 px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:bg-white/5 transition-all">
+            <a href="#connect" className="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:bg-slate-50 transition-all text-text-primary">
               <span>Let's Connect</span>
             </a>
           </div>
@@ -157,14 +147,14 @@ const Hero: React.FC = () => {
 
         <div className="order-1 md:order-2 flex justify-center md:justify-end">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-accent to-blue-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-            <div className="relative w-72 h-72 md:w-96 md:h-96 bg-background-secondary rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-accent rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            <div className="relative w-72 h-72 md:w-96 md:h-96 bg-white rounded-3xl overflow-hidden border border-accent/20 shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
-                alt="Akul Malhotra Placeholder" 
+                alt="Akul Malhotra Portrait" 
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background-primary/60 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
             </div>
           </div>
         </div>
@@ -179,7 +169,7 @@ const Hero: React.FC = () => {
 
 const Capabilities: React.FC = () => {
   return (
-    <section className="py-24 bg-background-primary relative">
+    <section className="py-24 bg-background-secondary relative">
       <div className="container mx-auto px-6">
         <div className="mb-16">
           <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">Capabilities</h2>
@@ -188,8 +178,8 @@ const Capabilities: React.FC = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {CAPABILITIES.map((cap, idx) => (
-            <div key={idx} className="bg-background-secondary p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all hover-lift group">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-background-primary transition-all">
+            <div key={idx} className="bg-white p-8 rounded-2xl border border-blue-50 hover:border-accent/20 transition-all hover-lift group shadow-sm">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all">
                 {idx === 0 && <span className="text-2xl">🤖</span>}
                 {idx === 1 && <span className="text-2xl">📈</span>}
                 {idx === 2 && <span className="text-2xl">📊</span>}
@@ -200,8 +190,8 @@ const Capabilities: React.FC = () => {
               <p className="text-text-secondary text-sm leading-relaxed mb-6 h-16 line-clamp-3">
                 {cap.description}
               </p>
-              <div className="pt-4 border-t border-white/5 flex items-center space-x-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_5px_rgba(78,205,196,1)]"></div>
+              <div className="pt-4 border-t border-slate-50 flex items-center space-x-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
                 <p className="text-xs font-medium text-text-primary opacity-80">{cap.proof}</p>
               </div>
             </div>
@@ -216,7 +206,7 @@ const SelectedWork: React.FC = () => {
   const [showSecondary, setShowSecondary] = useState(false);
 
   return (
-    <section id="work" className="py-24 bg-background-secondary scroll-mt-20">
+    <section id="work" className="py-24 bg-white scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -230,23 +220,23 @@ const SelectedWork: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {PROJECTS.map((project) => (
-            <div key={project.id} className="bg-background-primary rounded-3xl overflow-hidden border border-white/5 flex flex-col hover-lift group">
+            <div key={project.id} className="bg-white rounded-3xl overflow-hidden border border-slate-100 flex flex-col hover-lift group shadow-sm">
               <div className="h-72 overflow-hidden relative">
                  <img 
                   src={`https://picsum.photos/seed/${project.id}/800/600`} 
                   alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 group-hover:opacity-100"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background-primary via-transparent to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-60"></div>
                 <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-background-primary/80 backdrop-blur-md text-text-primary border border-white/10 px-2 py-1 rounded">
+                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-md text-text-primary border border-slate-100 px-2 py-1 rounded">
                       {tag}
                     </span>
                   ))}
                 </div>
                 {project.isFeatured && (
-                  <div className="absolute top-4 right-4 bg-accent text-background-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-lg">Featured</div>
+                  <div className="absolute top-4 right-4 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-lg">Featured</div>
                 )}
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -265,7 +255,6 @@ const SelectedWork: React.FC = () => {
           ))}
         </div>
 
-        {/* Collapsible Secondary Projects */}
         <div className="text-center">
           <button 
             onClick={() => setShowSecondary(!showSecondary)}
@@ -279,7 +268,7 @@ const SelectedWork: React.FC = () => {
         {showSecondary && (
           <div className="grid md:grid-cols-3 gap-6 mt-12 animate-fade-in">
             {SECONDARY_PROJECTS.map((project) => (
-              <div key={project.id} className="bg-background-primary p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-all">
+              <div key={project.id} className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 hover:border-accent/20 transition-all shadow-sm">
                 <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-2">{project.type}</span>
                 <h4 className="text-lg font-bold text-text-primary mb-2">{project.title}</h4>
                 <p className="text-xs text-text-secondary mb-4 line-clamp-3">{project.description}</p>
@@ -295,8 +284,8 @@ const SelectedWork: React.FC = () => {
 
 const Approach: React.FC = () => {
   return (
-    <section id="approach" className="py-24 bg-background-primary relative overflow-hidden scroll-mt-20">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>
+    <section id="approach" className="py-24 bg-background-secondary relative overflow-hidden scroll-mt-20">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
       
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
@@ -305,14 +294,13 @@ const Approach: React.FC = () => {
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2 -z-10"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-200 to-transparent -translate-y-1/2 -z-10"></div>
           
           <div className="grid lg:grid-cols-3 gap-12">
             {STEPS.map((step, idx) => (
-              <div key={idx} className="bg-background-secondary p-10 rounded-3xl border border-white/5 flex flex-col items-center text-center group relative overflow-hidden">
+              <div key={idx} className="bg-white p-10 rounded-3xl border border-slate-100 flex flex-col items-center text-center group relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="absolute top-0 left-0 w-1 h-full bg-accent transform -translate-x-full group-hover:translate-x-0 transition-transform"></div>
-                <div className="w-20 h-20 bg-background-primary rounded-2xl flex items-center justify-center text-4xl mb-8 border border-accent/20 group-hover:border-accent group-hover:rotate-6 transition-all">
+                <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center text-4xl mb-8 border border-blue-100 group-hover:border-accent group-hover:rotate-6 transition-all">
                   {step.icon}
                 </div>
                 <h4 className="text-xs font-bold text-accent uppercase tracking-[0.2em] mb-4">Step {idx + 1}</h4>
@@ -331,7 +319,7 @@ const Approach: React.FC = () => {
 
 const Philosophy: React.FC = () => {
   return (
-    <section id="philosophy" className="py-24 bg-background-secondary relative overflow-hidden scroll-mt-20">
+    <section id="philosophy" className="py-24 bg-white relative overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between mb-16 gap-8">
           <div className="max-w-xl">
@@ -345,8 +333,8 @@ const Philosophy: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PRINCIPLES.map((p, idx) => (
-            <div key={idx} className="p-8 border border-white/5 rounded-2xl hover:bg-white/5 hover:border-accent/10 transition-all group">
-              <div className="text-accent font-mono text-xs mb-4 opacity-50 group-hover:opacity-100 transition-opacity">0{idx + 1}</div>
+            <div key={idx} className="p-8 border border-slate-100 rounded-2xl hover:bg-blue-50/30 hover:border-accent/10 transition-all group shadow-sm">
+              <div className="text-accent font-mono text-xs mb-4 opacity-50 group-hover:opacity-100 transition-opacity font-bold">0{idx + 1}</div>
               <h4 className="text-xl font-bold text-text-primary mb-3 group-hover:text-accent transition-colors">{p.title}</h4>
               <p className="text-text-secondary text-sm leading-relaxed">{p.description}</p>
             </div>
@@ -359,21 +347,21 @@ const Philosophy: React.FC = () => {
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-background-primary scroll-mt-20">
+    <section id="about" className="py-24 bg-background-secondary scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 group shadow-2xl">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-accent/10 group shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1519085185758-29178f07c00a?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
                 alt="About Akul" 
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000"
               />
-              <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-2xl hidden lg:block shadow-xl transform group-hover:scale-105 transition-transform">
-              <p className="text-background-primary font-extrabold text-5xl mb-1">5+</p>
-              <p className="text-background-primary/80 font-bold text-xs uppercase tracking-widest">Years Experience</p>
+              <p className="text-white font-extrabold text-5xl mb-1">5+</p>
+              <p className="text-white/80 font-bold text-xs uppercase tracking-widest">Years Experience</p>
             </div>
           </div>
           
@@ -394,11 +382,11 @@ const About: React.FC = () => {
             </div>
             
             <div className="mt-10 grid grid-cols-2 gap-4">
-              <div className="p-5 rounded-xl border border-white/5 bg-background-secondary/50 hover:border-accent/30 transition-colors">
+              <div className="p-5 rounded-xl border border-blue-100 bg-white hover:border-accent/30 transition-colors shadow-sm">
                 <p className="text-accent font-bold text-xs uppercase mb-1">Education</p>
                 <p className="text-text-primary text-sm font-semibold">MS Analytics (AU)</p>
               </div>
-              <div className="p-5 rounded-xl border border-white/5 bg-background-secondary/50 hover:border-accent/30 transition-colors">
+              <div className="p-5 rounded-xl border border-blue-100 bg-white hover:border-accent/30 transition-colors shadow-sm">
                 <p className="text-accent font-bold text-xs uppercase mb-1">Certification</p>
                 <p className="text-text-primary text-sm font-semibold">PMP Certified</p>
               </div>
@@ -412,10 +400,10 @@ const About: React.FC = () => {
 
 const Connect: React.FC = () => {
   return (
-    <section id="connect" className="py-24 bg-background-secondary relative overflow-hidden scroll-mt-20">
+    <section id="connect" className="py-24 bg-white relative overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto glass p-8 md:p-16 rounded-[40px] border border-white/10 relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
+        <div className="max-w-4xl mx-auto glass p-8 md:p-16 rounded-[40px] border border-blue-100 relative overflow-hidden shadow-2xl bg-white/90">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
           
           <div className="text-center mb-12">
             <h2 className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-6">Contact</h2>
@@ -426,7 +414,7 @@ const Connect: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 mb-12">
-            <a href="mailto:akulsuhailmalhotra@gmail.com" className="flex items-center space-x-5 p-6 rounded-2xl bg-background-primary/40 hover:bg-background-primary transition-all group border border-white/5 hover:border-accent/30">
+            <a href="mailto:akulsuhailmalhotra@gmail.com" className="flex items-center space-x-5 p-6 rounded-2xl bg-blue-50/30 hover:bg-blue-50 transition-all group border border-blue-100 hover:border-accent/30">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                 <Mail size={24} />
               </div>
@@ -435,7 +423,7 @@ const Connect: React.FC = () => {
                 <p className="text-text-primary font-medium text-sm md:text-base break-all">akulsuhailmalhotra@gmail.com</p>
               </div>
             </a>
-            <a href="https://linkedin.com/in/malhotraakulsuhail" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-5 p-6 rounded-2xl bg-background-primary/40 hover:bg-background-primary transition-all group border border-white/5 hover:border-accent/30">
+            <a href="https://linkedin.com/in/malhotraakulsuhail" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-5 p-6 rounded-2xl bg-blue-50/30 hover:bg-blue-50 transition-all group border border-blue-100 hover:border-accent/30">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                 <Linkedin size={24} />
               </div>
@@ -444,7 +432,7 @@ const Connect: React.FC = () => {
                 <p className="text-text-primary font-medium">in/malhotraakulsuhail</p>
               </div>
             </a>
-            <a href="#" className="flex items-center space-x-5 p-6 rounded-2xl bg-background-primary/40 hover:bg-background-primary transition-all group border border-white/5 hover:border-accent/30">
+            <a href="#" className="flex items-center space-x-5 p-6 rounded-2xl bg-blue-50/30 hover:bg-blue-50 transition-all group border border-blue-100 hover:border-accent/30">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                 <Calendar size={24} />
               </div>
@@ -453,7 +441,7 @@ const Connect: React.FC = () => {
                 <p className="text-text-primary font-medium">Open Calendar</p>
               </div>
             </a>
-            <div className="flex items-center space-x-5 p-6 rounded-2xl bg-background-primary/40 border border-white/5">
+            <div className="flex items-center space-x-5 p-6 rounded-2xl bg-slate-50/50 border border-slate-100">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                 <MapPin size={24} />
               </div>
@@ -465,7 +453,7 @@ const Connect: React.FC = () => {
           </div>
 
           <div className="text-center">
-            <a href="#" className="inline-flex items-center space-x-3 bg-text-primary text-background-primary px-10 py-5 rounded-2xl font-bold text-lg hover:bg-accent transition-all transform active:scale-95 shadow-xl shadow-black/20 group">
+            <a href="#" className="inline-flex items-center space-x-3 bg-text-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-accent transition-all transform active:scale-95 shadow-xl shadow-slate-200 group">
               <Download size={20} className="group-hover:translate-y-0.5 transition-transform" />
               <span>Download Full CV</span>
             </a>
@@ -478,7 +466,7 @@ const Connect: React.FC = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-12 bg-background-primary border-t border-white/5">
+    <footer className="py-12 bg-white border-t border-slate-100">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="text-text-secondary text-sm">
@@ -498,7 +486,7 @@ const Footer: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <div className="font-sans antialiased text-text-primary selection:bg-accent selection:text-background-primary">
+    <div className="font-sans antialiased text-text-primary selection:bg-accent selection:text-white">
       <Header />
       <main>
         <Hero />

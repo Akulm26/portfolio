@@ -15,14 +15,14 @@
           extend: {
             colors: {
               background: {
-                primary: '#0f0f23',
-                secondary: '#16213e',
+                primary: '#ffffff',
+                secondary: '#f0f7ff',
               },
               text: {
-                primary: '#e8e8e8',
-                secondary: '#a0a0a0',
+                primary: '#1e293b',
+                secondary: '#64748b',
               },
-              accent: '#4ecdc4', // Muted Teal
+              accent: '#3b82f6', // Professional Blue
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -34,21 +34,26 @@
     </script>
     <style>
       body {
-        background-color: #0f0f23;
-        color: #e8e8e8;
+        background-color: #ffffff;
+        color: #1e293b;
       }
       .glass {
-        background: rgba(22, 33, 62, 0.7);
+        background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.1);
       }
       .hover-lift {
         transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
       }
       .hover-lift:hover {
         transform: translateY(-4px);
-        box-shadow: 0 10px 30px -10px rgba(78, 205, 196, 0.3);
+        box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+      }
+      .text-gradient {
+        background: linear-gradient(to right, #2563eb, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     </style>
   <script type="importmap">
