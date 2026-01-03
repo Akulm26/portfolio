@@ -221,24 +221,26 @@ const SelectedWork: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {PROJECTS.map((project) => (
             <div key={project.id} className="bg-white rounded-3xl overflow-hidden border border-slate-100 flex flex-col hover-lift group shadow-sm">
-              <div className="h-72 overflow-hidden relative">
-                 <img 
-                  src={`https://picsum.photos/seed/${project.id}/800/600`} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-60"></div>
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-md text-text-primary border border-slate-100 px-2 py-1 rounded">
-                      {tag}
-                    </span>
-                  ))}
+              {project.id !== 'cerebro-ai' && (
+                <div className="h-72 overflow-hidden relative">
+                   <img 
+                    src={`https://picsum.photos/seed/${project.id}/800/600`} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-md text-text-primary border border-slate-100 px-2 py-1 rounded">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  {project.isFeatured && (
+                    <div className="absolute top-4 right-4 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-lg">Featured</div>
+                  )}
                 </div>
-                {project.isFeatured && (
-                  <div className="absolute top-4 right-4 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-lg">Featured</div>
-                )}
-              </div>
+              )}
               <div className="p-8 flex flex-col flex-grow">
                 <span className="text-accent font-bold text-xs uppercase mb-2 tracking-widest">{project.type}</span>
                 <h4 className="text-2xl font-bold text-text-primary mb-3 leading-tight group-hover:text-accent transition-colors">{project.title}</h4>
