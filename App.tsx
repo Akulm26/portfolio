@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Linkedin, Calendar, MapPin, ArrowRight, ExternalLink, Download, Plus, Zap, Target, Activity, Award, Brain, Microscope, Compass, Layers, Search, RefreshCw, BarChart3, Workflow, GraduationCap, Globe, Sparkles, Coffee, Phone, Clapperboard, Upload, Loader2, Play, Image as ImageIcon, Wand2, Check } from 'lucide-react';
 import { PROJECTS, SECONDARY_PROJECTS, CAPABILITIES, STEPS, PRINCIPLES } from './constants';
@@ -89,7 +90,7 @@ const ImageEditorModal: React.FC<{
       }
 
       if (!foundImage) {
-        throw new Error("Gemini didn't return an image. Try a different prompt.");
+        throw new Error("Failed to generate image.");
       }
     } catch (err: any) {
       console.error(err);
@@ -146,7 +147,7 @@ const ImageEditorModal: React.FC<{
                 <textarea 
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
-                  placeholder="e.g. 'Add a retro cinematic filter', 'Remove the background person', 'Make it look futuristic'..."
+                  placeholder="e.g. 'Add a retro cinematic filter', 'Remove the background person'..."
                   className="w-full p-5 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:ring-2 focus:ring-accent/20 focus:border-accent outline-none min-h-[120px] transition-all"
                 />
               </div>
@@ -564,7 +565,6 @@ const Header: React.FC = () => {
 const Hero: React.FC = () => {
   return (
     <section className="min-h-screen flex items-center pt-20 pb-20 overflow-hidden relative bg-white">
-      <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-blue-50/50 blur-[100px] -z-10 rounded-full animate-pulse"></div>
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-slate-50/50 blur-[120px] -z-10 rounded-full"></div>
       
       <div className="container mx-auto px-6">
@@ -663,23 +663,23 @@ const SelectedWork: React.FC<{
               </span>
 
               <div className={`flex flex-col lg:flex-row gap-16 lg:gap-32 items-start ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className="w-full lg:w-[60%] relative group/img-wrapper flex flex-col md:flex-row gap-6">
-                  <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative">
+                <div className="w-full lg:w-[60%] relative group/img-wrapper">
+                  <div className="rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative">
                     <img 
-                      src={project.imageUrl || `https://picsum.photos/seed/${project.id}/1600/1200`} 
+                      src={editedImages[project.id] || project.imageUrl || `https://picsum.photos/seed/${project.id}/1600/1200`} 
                       alt={project.title} 
                       className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img-wrapper:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 p-4">
                       <button 
-                        onClick={() => onAnimate(project.imageUrl || '')}
+                        onClick={() => onAnimate(editedImages[project.id] || project.imageUrl || '')}
                         className="w-full max-w-xs bg-white text-text-primary px-6 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2"
                       >
                         <Clapperboard size={18} className="text-accent" />
                         Veo Animator
                       </button>
                       <button 
-                        onClick={() => onEdit(project.imageUrl || '', project.id)}
+                        onClick={() => onEdit(editedImages[project.id] || project.imageUrl || '', project.id)}
                         className="w-full max-w-xs bg-accent text-white px-6 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2"
                       >
                         <ImageIcon size={18} />
@@ -687,20 +687,6 @@ const SelectedWork: React.FC<{
                       </button>
                     </div>
                   </div>
-
-                  {/* Right side of Cerebro AI resulting image display */}
-                  {project.id === 'cerebro-ai' && editedImages[project.id] && (
-                    <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl border-4 border-accent/20 animate-in fade-in slide-in-from-right-10 duration-1000">
-                      <div className="absolute top-4 left-4 z-10 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
-                        AI Result
-                      </div>
-                      <img 
-                        src={editedImages[project.id]} 
-                        alt="Edited Cerebro AI" 
-                        className="w-full aspect-[4/3] object-cover"
-                      />
-                    </div>
-                  )}
                 </div>
 
                 <div className="w-full lg:w-[40%] pt-8 space-y-8">
@@ -784,59 +770,6 @@ const SelectedWork: React.FC<{
   );
 };
 
-// Rest of components (CapabilitiesSection, Approach, Philosophy, About, Contact, Footer) stay the same
-
-const App: React.FC = () => {
-  const [isAnimateModalOpen, setIsAnimateModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<string | undefined>(undefined);
-  const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
-  const [editedImages, setEditedImages] = useState<Record<string, string>>({});
-
-  const openAnimate = (img: string) => {
-    setModalImage(img);
-    setIsAnimateModalOpen(true);
-  };
-
-  const openEdit = (img: string, projectId: string) => {
-    setModalImage(img);
-    setActiveProjectId(projectId);
-    setIsEditModalOpen(true);
-  };
-
-  const handleImageEdited = (newImageUrl: string) => {
-    if (activeProjectId) {
-      setEditedImages(prev => ({ ...prev, [activeProjectId]: newImageUrl }));
-    }
-  };
-
-  return (
-    <div className="min-h-screen font-sans text-text-primary">
-      <Header />
-      <Hero />
-      <SelectedWork 
-        onAnimate={openAnimate} 
-        onEdit={openEdit}
-        editedImages={editedImages}
-      />
-      <CapabilitiesSection />
-      <Approach />
-      <Philosophy />
-      <About />
-      <Contact />
-      <Footer />
-      <VeoModal isOpen={isAnimateModalOpen} onClose={() => setIsAnimateModalOpen(false)} initialImage={modalImage} />
-      <ImageEditorModal 
-        isOpen={isEditModalOpen} 
-        onClose={() => setIsEditModalOpen(false)} 
-        initialImage={modalImage} 
-        onImageEdited={handleImageEdited}
-      />
-    </div>
-  );
-};
-
-// Placeholder components to maintain structure (already defined in previous turns but ensuring they are here for App.tsx context)
 const CapabilitiesSection: React.FC = () => {
   return (
     <section className="pt-32 pb-48 bg-slate-50">
@@ -1008,6 +941,56 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
+  );
+};
+
+const App: React.FC = () => {
+  const [isAnimateModalOpen, setIsAnimateModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState<string | undefined>(undefined);
+  const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
+  const [editedImages, setEditedImages] = useState<Record<string, string>>({});
+
+  const openAnimate = (img: string) => {
+    setModalImage(img);
+    setIsAnimateModalOpen(true);
+  };
+
+  const openEdit = (img: string, projectId: string) => {
+    setModalImage(img);
+    setActiveProjectId(projectId);
+    setIsEditModalOpen(true);
+  };
+
+  const handleImageEdited = (newImageUrl: string) => {
+    if (activeProjectId) {
+      setEditedImages(prev => ({ ...prev, [activeProjectId]: newImageUrl }));
+    }
+  };
+
+  return (
+    <div className="min-h-screen font-sans text-text-primary">
+      <Header />
+      <Hero />
+      <SelectedWork 
+        onAnimate={openAnimate} 
+        onEdit={openEdit}
+        editedImages={editedImages}
+      />
+      <CapabilitiesSection />
+      <Approach />
+      <Philosophy />
+      <About />
+      <Contact />
+      <Footer />
+      <VeoModal isOpen={isAnimateModalOpen} onClose={() => setIsAnimateModalOpen(false)} initialImage={modalImage} />
+      <ImageEditorModal 
+        isOpen={isEditModalOpen} 
+        onClose={() => setIsEditModalOpen(false)} 
+        initialImage={modalImage} 
+        onImageEdited={handleImageEdited}
+      />
+    </div>
   );
 };
 

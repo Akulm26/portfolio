@@ -1,3 +1,4 @@
+
 import { Project, Capability, Step, Principle } from './types';
 
 export interface EnhancedProject extends Project {
