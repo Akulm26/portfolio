@@ -701,10 +701,11 @@ const SelectedWork: React.FC<{
                       <div className="absolute top-4 left-4 z-10 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
                         AI Generated
                       </div>
-                      <img 
-                        src="https://drive.usercontent.google.com/download?id=1McZ75tTv4wYUXN_wZ0_LVFAQcS7kREDZ"
-                        alt="AI Generated Result" 
+                      <img
+                        src="https://drive.google.com/uc?export=view&id=1McZ75tTv4wYUXN_wZ0_LVFAQcS7kREDZ"
+                        alt="AI Generated Result"
                         className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
+                        crossOrigin="anonymous"
                       />
                     </div>
                   </div>
