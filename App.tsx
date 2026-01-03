@@ -687,29 +687,21 @@ const SelectedWork: React.FC<{
                       </button>
                     </div>
                   </div>
-                  </div>
-                ) : (
-                  <div className="w-full lg:w-[60%] relative group/img-wrapper flex flex-col md:flex-row gap-6">
-                    <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative">
-                      <img 
-                        src="https://raw.githubusercontent.com/Akulm26/portfolio/main/Screenshot%202026-01-02%20at%2023.47.43.png"
-                        alt={project.title} 
-                        className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
-                      />
-                    </div>
-                    <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative border-4 border-accent/20">
+
+                  {/* Right side of Cerebro AI resulting image display */}
+                  {project.id === 'cerebro-ai' && editedImages[project.id] && (
+                    <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl border-4 border-accent/20 animate-in fade-in slide-in-from-right-10 duration-1000">
                       <div className="absolute top-4 left-4 z-10 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
-                        AI Generated
+                        AI Result
                       </div>
-                      <img
-                        src="https://drive.google.com/uc?export=view&id=1McZ75tTv4wYUXN_wZ0_LVFAQcS7kREDZ"
-                        alt="AI Generated Result"
-                        className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
-                        crossOrigin="anonymous"
+                      <img 
+                        src={editedImages[project.id]} 
+                        alt="Edited Cerebro AI" 
+                        className="w-full aspect-[4/3] object-cover"
                       />
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
 
                 <div className="w-full lg:w-[40%] pt-8 space-y-8">
                   <div className="flex items-center gap-4">
