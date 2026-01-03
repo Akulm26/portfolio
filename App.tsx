@@ -103,7 +103,7 @@ const Hero: React.FC = () => {
             <h1 className="font-display text-5xl md:text-6xl lg:text-[80px] font-black text-text-primary leading-[1.1] tracking-tighter mb-12">
               Hi there! 👋 <br /><br /> I'm Akul – <br />
               <span className="text-text-primary">Turning</span> ideas into <br />
-              <span className="text-accent italic text-gradient inline-block pr-4">everyday products.</span>
+              <span className="text-accent italic text-gradient inline-block pr-6 pb-2">everyday products.</span>
             </h1>
 
             <div className="grid sm:grid-cols-3 gap-6 max-w-4xl">
@@ -132,19 +132,28 @@ const Hero: React.FC = () => {
                 className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent pointer-events-none"></div>
-              
-              {/* Image Contact Buttons */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
-                <a href="mailto:akul@example.com" className="w-12 h-12 rounded-full glass flex items-center justify-center text-text-primary hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:scale-110" title="Email">
-                  <Mail size={20} />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center text-text-primary hover:bg-[#0077B5] hover:text-white transition-all duration-300 shadow-lg hover:scale-110" title="LinkedIn">
-                  <Linkedin size={20} />
-                </a>
-                <a href="tel:+1234567890" className="w-12 h-12 rounded-full glass flex items-center justify-center text-text-primary hover:bg-green-600 hover:text-white transition-all duration-300 shadow-lg hover:scale-110" title="Call">
-                  <Phone size={20} />
-                </a>
-              </div>
+            </div>
+
+            {/* Quick Contact Actions - Positioned BELOW the image */}
+            <div className="mt-8 flex items-center justify-center gap-6 animate-in fade-in slide-in-from-top-4 duration-1000 delay-300">
+              <a href="mailto:akul@example.com" className="group/action flex flex-col items-center gap-2">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-text-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-accent/20 hover:-translate-y-1">
+                  <Mail size={24} />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-text-secondary opacity-0 group-hover/action:opacity-100 transition-opacity">Email</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group/action flex flex-col items-center gap-2">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-text-primary hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5] transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-[#0077B5]/20 hover:-translate-y-1">
+                  <Linkedin size={24} />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-text-secondary opacity-0 group-hover/action:opacity-100 transition-opacity">LinkedIn</span>
+              </a>
+              <a href="tel:+1234567890" className="group/action flex flex-col items-center gap-2">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-text-primary hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-green-600/20 hover:-translate-y-1">
+                  <Phone size={24} />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-text-secondary opacity-0 group-hover/action:opacity-100 transition-opacity">Call</span>
+              </a>
             </div>
           </div>
         </div>
