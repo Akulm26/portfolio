@@ -18,7 +18,7 @@ export const PROJECTS: EnhancedProject[] = [
     description: 'A second brain that captures, organizes, and resurfaces information across your digital life. Built on a custom RAG architecture to provide context-aware retrieval with zero-friction entry.',
     ctaText: 'View Case Study',
     isFeatured: true,
-    imageUrl: 'img src="https://i.ibb.co/gMqMJjQz/Gemini-Generated-Image-76dc4o76dc4o76dc.png',
+    imageUrl: 'https://i.ibb.co/gMqMJjQz/Gemini-Generated-Image-76dc4o76dc4o76dc.png',
   },
   {
     id: 'leaklock',
