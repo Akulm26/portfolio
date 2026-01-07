@@ -625,7 +625,6 @@ const Hero: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
