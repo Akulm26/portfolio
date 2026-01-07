@@ -1,4 +1,3 @@
-
 import { Project, Capability, Step, Principle } from './types';
 
 export interface EnhancedProject extends Project {
@@ -18,7 +17,7 @@ export const PROJECTS: EnhancedProject[] = [
     metricValue: '+22%',
     description: 'Shipped guided workouts, a community sports feed, and workout tracking features that significantly improved user engagement and paid retention.',
     ctaText: 'View Case Study',
-    imageUrl: 'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=1600&auto=format&fit=crop',
+    imageUrl: 'https://raw.githubusercontent.com/Akulm26/portfolio/main/public/fitness%20app',
   },
   {
     id: 'cerebro-ai',

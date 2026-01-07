@@ -564,36 +564,32 @@ const Header: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center pt-20 pb-20 overflow-hidden relative bg-white">
-      <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-slate-50/50 blur-[120px] -z-10 rounded-full"></div>
-      
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-16 items-center">
-          <div className="relative z-10">
-            <h1 className="font-display text-5xl md:text-6xl lg:text-[80px] font-black text-text-primary leading-[1.1] tracking-tighter mb-12">
-              Hi there! 👋 <br /><br /> I'm Akul – <br />
-              <span className="text-text-primary">Turning</span> ideas into <br />
-              <span className="text-accent italic text-gradient inline-block pr-6 pb-2">everyday products.</span>
-            </h1>
+    <section className="min-h-screen flex items-center pt-24 pb-12 overflow-hidden relative bg-white">
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-100/50 blur-[120px] -z-10 rounded-full"></div>
+      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-50/30 blur-[100px] -z-10 rounded-full"></div>
 
-            <div className="grid sm:grid-cols-3 gap-6 max-w-4xl">
-              {[
-                { icon: <Workflow size={20} />, label: 'Build', text: 'Shipping systems that change real user behavior.' },
-                { icon: <RefreshCw size={20} />, label: 'Translate', text: 'Turning messy signals into usable product decisions.' },
-                { icon: <BarChart3 size={20} />, label: 'Measure', text: 'Defining metrics that reflect real human value.' }
-              ].map((item, i) => (
-                <div key={i} className="p-6 rounded-3xl bg-white border border-slate-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-xl transition-all duration-300 group">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
-                  </div>
-                  <h4 className="font-bold text-text-primary mb-2 whitespace-nowrap">{item.label}</h4>
-                  <p className="text-text-secondary text-sm leading-relaxed">{item.text}</p>
-                </div>
-              ))}
-            </div>
+      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="order-1 md:order-1">
+          <h1 className="font-display text-5xl md:text-7xl font-extrabold text-text-primary leading-[1.1] mb-6 tracking-tight">
+            I build AI-powered products that <span className="text-accent italic">people actually use.</span>
+          </h1>
+
+          <p className="text-xl text-text-secondary mb-10 max-w-xl leading-relaxed">
+            Analytics professional turned product builder. I've shipped features at Apple, built AI recommendation engines, and driven measurable growth across fitness, media, and news products.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="#work" className="bg-accent text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:shadow-xl hover:shadow-accent/30 transition-all">
+              <span>View My Work</span>
+              <ArrowRight size={18} />
+            </a>
+            <a href="#connect" className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 flex items-center justify-center space-x-2 hover:border-accent transition-all">
+              <span>Get in Touch</span>
+            </a>
           </div>
+        </div>
 
-          <div className="relative z-20 flex flex-col items-center">
+        <div className="order-2 md:order-2 relative z-20 flex flex-col items-center">
             <div className="relative group perspective-1000 w-full">
               <div className="absolute -inset-4 bg-gradient-to-tr from-accent/5 to-transparent blur-2xl rounded-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative w-full aspect-[1/1.1] rounded-[60px] overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl transition-all duration-700 hover:rotate-1 hover:scale-[1.01]">
@@ -643,104 +639,42 @@ const SelectedWork: React.FC<{
   const [showSecondary, setShowSecondary] = useState(false);
 
   return (
-    <section id="work" className="py-40 bg-white scroll-mt-20">
+    <section id="work" className="py-24 bg-white scroll-mt-20">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col mb-32 border-b border-slate-100 pb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-[2px] w-20 bg-accent"></div>
-            <span className="text-accent font-bold tracking-[0.3em] uppercase text-lg">Execution Archive</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">Case Studies</h2>
+            <h3 className="text-3xl md:text-5xl font-display font-bold text-text-primary">Selected Work</h3>
           </div>
-          <h2 className="text-5xl md:text-8xl font-display font-black text-text-primary tracking-tighter leading-none max-w-5xl">
-            Raw data. <br />Real behavior. <span className="text-accent italic">Real impact.</span>
-          </h2>
+          <p className="text-text-secondary max-w-md">
+            Outcome-focused projects demonstrating technical AI research and growth-oriented product strategy.
+          </p>
         </div>
 
-        <div className="space-y-64">
-          {PROJECTS.map((project, index) => (
-            <div key={project.id} className="relative group">
-              <span className="absolute -top-20 -left-10 text-[200px] md:text-[300px] font-display font-black text-slate-50 -z-10 select-none opacity-60 group-hover:text-blue-50 transition-colors duration-500">
-                0{index + 1}
-              </span>
-
-              <div className={`flex flex-col lg:flex-row gap-16 lg:gap-32 items-start ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className="w-full lg:w-[60%] relative group/img-wrapper">
-                  <div className="rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative">
-                    <img 
-                      src={editedImages[project.id] || project.imageUrl || `https://picsum.photos/seed/${project.id}/1600/1200`} 
-                      alt={project.title} 
-                      className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img-wrapper:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 p-4">
-                      <button 
-                        onClick={() => onAnimate(editedImages[project.id] || project.imageUrl || '')}
-                        className="w-full max-w-xs bg-white text-text-primary px-6 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2"
-                      >
-                        <Clapperboard size={18} className="text-accent" />
-                        Veo Animator
-                      </button>
-                      <button 
-                        onClick={() => onEdit(editedImages[project.id] || project.imageUrl || '', project.id)}
-                        className="w-full max-w-xs bg-accent text-white px-6 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2"
-                      >
-                        <ImageIcon size={18} />
-                        Nano Banana Edit
-                      </button>
-                    </div>
-                  </div>
-                  </div>
-                ) : (
-                  <div className="w-full lg:w-[60%] relative group/img-wrapper flex flex-col md:flex-row gap-6">
-                    <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative">
-                      <img 
-                        src="https://raw.githubusercontent.com/Akulm26/portfolio/main/Screenshot%202026-01-02%20at%2023.47.43.png"
-                        alt={project.title} 
-                        className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
-                      />
-                    </div>
-                    <div className="flex-1 rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-200/50 group-hover:scale-[1.01] relative border-4 border-accent/20">
-                      <div className="absolute top-4 left-4 z-10 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
-                        AI Generated
-                      </div>
-                      <img
-                        src="https://drive.google.com/uc?export=view&id=1qr9IAESUlnN25VaKNMi59V5C2_RmHRb6"
-                        alt="AI Generated Result"
-                        className="w-full aspect-[4/3] object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-700"
-                        crossOrigin="anonymous"
-                      />
-                    </div>
-                  </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {PROJECTS.map((project) => (
+            <div key={project.id} className="bg-white rounded-3xl overflow-hidden border border-slate-100 flex flex-col hover-lift group shadow-sm">
+              <div className="h-72 overflow-hidden relative">
+                <img
+                  src={editedImages[project.id] || project.imageUrl || `https://picsum.photos/seed/${project.id}/800/600`}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-60"></div>
+                {project.isFeatured && (
+                  <div className="absolute top-4 right-4 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-lg">Featured</div>
                 )}
-
-                <div className="w-full lg:w-[40%] pt-8 space-y-8">
-                  <div className="flex items-center gap-4">
-                    <span className="text-accent font-bold uppercase tracking-widest text-[10px] bg-blue-50 px-3 py-1 rounded-full">{project.type}</span>
-                    {project.metricValue && (
-                      <div className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full">
-                        <span className="text-[10px] font-bold text-green-700 uppercase">{project.metricLabel}: {project.metricValue}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <h3 className="text-4xl md:text-6xl font-display font-bold text-text-primary tracking-tight leading-[1.1] group-hover:text-accent transition-colors duration-300">
-                    {project.title}
-                  </h3>
-
-                  <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="h-6 w-[2px] bg-accent mt-2"></div>
-                      <p className="text-lg md:text-xl text-text-secondary leading-relaxed font-light">
-                        <span className="font-bold text-text-primary block mb-2">{project.headline}</span>
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-8 flex flex-wrap gap-6">
-                    <a href="#" className="group/btn inline-flex items-center gap-3 text-text-primary font-bold text-lg border-b-2 border-accent pb-1 hover:border-text-primary transition-all">
-                      <span>{project.ctaText}</span>
-                      <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
-                    </a>
-                  </div>
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <span className="text-accent font-bold text-xs uppercase mb-2 tracking-widest">{project.type}</span>
+                <h4 className="text-2xl font-bold text-text-primary mb-3 leading-tight group-hover:text-accent transition-colors">{project.title}</h4>
+                <p className="text-lg font-medium text-text-secondary/80 mb-4 line-clamp-1 italic">"{project.headline}"</p>
+                <p className="text-text-secondary text-sm leading-relaxed mb-8 flex-grow">{project.description}</p>
+                <div className="mt-auto">
+                  <a href="#" className="inline-flex items-center space-x-2 text-text-primary font-bold border-b-2 border-accent pb-1 hover:border-accent/40 transition-all">
+                    <span>{project.ctaText}</span>
+                    <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
             </div>
