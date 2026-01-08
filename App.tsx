@@ -579,15 +579,6 @@ const Hero: React.FC = () => {
             Analytics professional turned product manager. 4+ years shipping features across media, fitness, and consumer technology - driving measurable growth through intelligent personalization and data-driven product decisions.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#work" className="bg-accent text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 hover:shadow-xl hover:shadow-accent/30 transition-all">
-              <span>View My Work</span>
-              <ArrowRight size={18} />
-            </a>
-            <a href="#connect" className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 flex items-center justify-center space-x-2 hover:border-accent transition-all">
-              <span>Get in Touch</span>
-            </a>
-          </div>
         </div>
 
         <div className="order-2 md:order-2 relative z-20 flex flex-col items-center">
