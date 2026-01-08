@@ -671,7 +671,7 @@ const SelectedWork: React.FC<{
           ))}
         </div>
 
-        <div className="mt-80 pt-32 border-t border-slate-100">
+        <div className="mt-16 pt-16 border-t border-slate-100">
           <div className="max-w-3xl mx-auto text-center mb-24">
             <h4 className="text-accent font-bold tracking-widest uppercase text-xs mb-4">The Complete Archive</h4>
             <h5 className="text-4xl md:text-6xl font-display font-bold text-text-primary tracking-tighter mb-8">
