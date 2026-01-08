@@ -475,7 +475,7 @@ const VeoModal: React.FC<{ isOpen: boolean; onClose: () => void; initialImage?: 
   );
 };
 
-const Header: React.FC = () => {
+const Header: React.FC<{ onWorkClick?: () => void }> = ({ onWorkClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -484,13 +484,13 @@ const Header: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#work' },
     { name: 'Philosophy', href: '#approach' },
-    { name: 'Work', href: '#capabilities' },
+    { name: 'Work', href: 'work-page' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      const sections = [...navLinks.map(link => link.href.substring(1)), 'connect'];
+      const sections = ['about', 'work', 'approach', 'connect'];
       let current = '';
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -507,6 +507,11 @@ const Header: React.FC = () => {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    if (href === 'work-page') {
+      setIsOpen(false);
+      if (onWorkClick) onWorkClick();
+      return;
+    }
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
     if (element) {
@@ -533,9 +538,9 @@ const Header: React.FC = () => {
         </a>
         <div className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
+            <a
+              key={link.name}
+              href={link.href === 'work-page' ? '#' : link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
               className={`text-sm font-medium transition-colors relative group ${activeSection === link.href.substring(1) ? 'text-accent' : 'text-text-secondary hover:text-accent'}`}
             >
@@ -554,7 +559,7 @@ const Header: React.FC = () => {
       <div className={`md:hidden fixed inset-0 z-40 bg-white transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col p-12 space-y-8 h-full justify-center">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-4xl font-display font-bold text-text-primary" onClick={(e) => handleLinkClick(e, link.href)}>{link.name}</a>
+            <a key={link.name} href={link.href === 'work-page' ? '#' : link.href} className="text-4xl font-display font-bold text-text-primary" onClick={(e) => handleLinkClick(e, link.href)}>{link.name}</a>
           ))}
           <a href="#connect" className="text-4xl font-display font-bold text-accent" onClick={(e) => handleLinkClick(e, '#connect')}>Connect</a>
         </div>
@@ -1086,6 +1091,38 @@ const UdemyCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   );
 };
 
+const WorkPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-white">
+      {/* Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <button onClick={onBack} className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
+            <ArrowRight className="rotate-180" size={18} />
+            <span className="font-medium">Back to Portfolio</span>
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">
+            Get in Touch
+          </a>
+        </div>
+      </nav>
+
+      {/* Centered Title */}
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
+            Work
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CaseStudyPage: React.FC<{ projectId: string; onBack: () => void }> = ({ projectId, onBack }) => {
   const project = [...PROJECTS, ...SECONDARY_PROJECTS].find(p => p.id === projectId);
   const caseStudy = CASE_STUDIES[projectId];
@@ -1333,9 +1370,17 @@ const App: React.FC = () => {
     return <UdemyCaseStudyPage onBack={handleBackToHome} />;
   }
 
+  if (currentPage === 'work-page') {
+    return <WorkPage onBack={handleBackToHome} />;
+  }
+
+  const handleWorkClick = () => {
+    setCurrentPage('work-page');
+  };
+
   return (
     <div className="min-h-screen font-sans text-text-primary">
-      <Header />
+      <Header onWorkClick={handleWorkClick} />
       <Hero />
       <SelectedWork
         onAnimate={openAnimate}
