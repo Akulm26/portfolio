@@ -483,7 +483,8 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#work' },
-    { name: 'Work', href: '#approach' },
+    { name: 'Philosophy', href: '#approach' },
+    { name: 'Work', href: '#capabilities' },
   ];
 
   useEffect(() => {
@@ -713,7 +714,7 @@ const SelectedWork: React.FC<{
 
 const CapabilitiesSection: React.FC = () => {
   return (
-    <section className="pt-32 pb-48 bg-slate-50">
+    <section id="capabilities" className="pt-32 pb-48 bg-slate-50 scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="mb-24 text-center max-w-3xl mx-auto">
           <h2 className="text-accent font-bold tracking-widest uppercase text-xs mb-4">Core Competencies</h2>
