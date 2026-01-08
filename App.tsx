@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Linkedin, Calendar, MapPin, ArrowRight, ExternalLink, Download, Plus, Zap, Target, Activity, Award, Brain, Microscope, Compass, Layers, Search, RefreshCw, BarChart3, Workflow, GraduationCap, Globe, Sparkles, Coffee, Phone, Clapperboard, Upload, Loader2, Play, Image as ImageIcon, Wand2, Check } from 'lucide-react';
-import { PROJECTS, SECONDARY_PROJECTS, CAPABILITIES, STEPS, PRINCIPLES } from './constants';
+import { PROJECTS, SECONDARY_PROJECTS, CAPABILITIES, STEPS, PRINCIPLES, CASE_STUDIES } from './constants';
 import { GoogleGenAI } from "@google/genai";
 
 const ImageEditorModal: React.FC<{ 
@@ -852,7 +852,194 @@ const Footer: React.FC = () => {
   );
 };
 
+const CaseStudyPage: React.FC<{ projectId: string; onBack: () => void }> = ({ projectId, onBack }) => {
+  const project = [...PROJECTS, ...SECONDARY_PROJECTS].find(p => p.id === projectId);
+  const caseStudy = CASE_STUDIES[projectId];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectId]);
+
+  if (!project || !caseStudy) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Case study not found</h1>
+          <button onClick={onBack} className="text-accent hover:underline">Go back home</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <button onClick={onBack} className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
+            <ArrowRight className="rotate-180" size={18} />
+            <span className="font-medium">Back to Portfolio</span>
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">
+            Get in Touch
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl">
+            <span className="text-accent font-bold text-xs uppercase tracking-widest mb-4 block">{project.type}</span>
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-text-primary mb-6">{project.title}</h1>
+            <p className="text-xl text-text-secondary leading-relaxed mb-8">{project.headline}</p>
+            {'role' in project && project.role && (
+              <div className="flex items-center gap-4 text-sm text-text-secondary">
+                <span className="font-bold">Role:</span>
+                <span>{project.role}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Image */}
+      {project.imageUrl && (
+        <section className="py-8">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+              <img src={project.imageUrl} alt={project.title} className="w-full h-auto" />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Overview */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-text-primary mb-6">Overview</h2>
+            <p className="text-lg text-text-secondary leading-relaxed">{caseStudy.overview}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-text-primary mb-6">The Problem</h2>
+            <p className="text-lg text-text-secondary leading-relaxed">{caseStudy.problem}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-text-primary mb-8">Approach</h2>
+            <div className="space-y-4">
+              {caseStudy.approach.map((step, idx) => (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    {idx + 1}
+                  </div>
+                  <p className="text-text-secondary leading-relaxed pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-text-primary mb-6">Solution</h2>
+            <p className="text-lg text-text-secondary leading-relaxed">{caseStudy.solution}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-text-primary mb-8">Results</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {caseStudy.results.map((result, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                  <div className="text-3xl font-bold text-accent mb-2">{result.value}</div>
+                  <div className="text-sm font-bold text-text-primary mb-2">{result.metric}</div>
+                  <p className="text-sm text-text-secondary">{result.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Learnings */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-8">Key Learnings</h2>
+            <div className="space-y-4">
+              {caseStudy.learnings.map((learning, idx) => (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
+                  <p className="text-slate-300 leading-relaxed">{learning}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools */}
+      {caseStudy.tools && caseStudy.tools.length > 0 && (
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-text-primary mb-6">Tools & Technologies</h2>
+              <div className="flex flex-wrap gap-3">
+                {caseStudy.tools.map((tool, idx) => (
+                  <span key={idx} className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
+            <p className="text-text-secondary mb-8">Let's discuss how I can help with your product challenges.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2">
+                <Mail size={20} />
+                <span>Get in Touch</span>
+              </a>
+              <button onClick={onBack} className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all">
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<string>('home');
   const [isAnimateModalOpen, setIsAnimateModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState<string | undefined>(undefined);
