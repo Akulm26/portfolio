@@ -855,12 +855,8 @@ const Contact: React.FC = () => {
 const Footer: React.FC = () => {
   return (
     <footer className="py-12 bg-white border-t border-slate-100">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-text-secondary text-sm">
+      <div className="container mx-auto px-6 text-center text-text-secondary text-sm">
         <p>© {new Date().getFullYear()} Akul S. Malhotra. Carefully engineered, usually caffeinated.</p>
-        <div className="flex gap-8">
-          <a href="#" className="hover:text-accent transition-colors">Resume</a>
-          <a href="https://www.linkedin.com/in/malhotraakulsuhail/" className="hover:text-accent transition-colors">LinkedIn</a>
-        </div>
       </div>
     </footer>
   );
