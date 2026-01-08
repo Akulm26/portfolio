@@ -595,7 +595,7 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="mt-10 flex items-center justify-center gap-8 relative z-30">
-              <a href="mailto:akulsuhailmalhotra@gmail.com" className="group/action flex flex-col items-center gap-2 cursor-pointer no-underline outline-none">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="group/action flex flex-col items-center gap-2 cursor-pointer no-underline outline-none">
                 <div className="w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-text-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-accent/30 hover:-translate-y-2 active:scale-95">
                   <Mail size={24} />
                 </div>
@@ -868,7 +868,7 @@ const Contact: React.FC = () => {
           <h2 className="text-accent font-bold tracking-widest uppercase text-xs mb-8">Get in Touch</h2>
           <h3 className="text-4xl md:text-6xl font-display font-bold text-text-primary tracking-tighter mb-12">Let's build something <br /> meaningful.</h3>
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="mailto:akulsuhailmalhotra@gmail.com" className="flex items-center gap-3 px-8 py-4 bg-text-primary text-white rounded-2xl font-bold hover:bg-accent transition-all shadow-xl shadow-slate-200 group"><Mail size={20} /><span>Email Me</span></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 bg-text-primary text-white rounded-2xl font-bold hover:bg-accent transition-all shadow-xl shadow-slate-200 group"><Mail size={20} /><span>Email Me</span></a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 bg-white text-text-primary border border-slate-200 rounded-2xl font-bold hover:bg-slate-50 transition-all"><Linkedin size={20} className="text-[#0077B5]" /><span>LinkedIn</span></a>
           </div>
         </div>
