@@ -576,7 +576,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-xl text-text-secondary mb-10 max-w-xl leading-relaxed">
-            Analytics professional turned product builder. I've shipped features at Apple, built AI recommendation engines, and driven measurable growth across fitness, media, and news products.
+            Analytics professional turned product manager. 4+ years shipping features across media, fitness, and consumer technology - driving measurable growth through intelligent personalization and data-driven product decisions.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
