@@ -687,24 +687,19 @@ const SelectedWork: React.FC<{
           </div>
 
           {showSecondary && (
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 duration-700">
+            <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 duration-700">
               {SECONDARY_PROJECTS.map((project) => (
-                <div key={project.id} className="bg-slate-50 p-12 rounded-[40px] hover:bg-white border border-transparent hover:border-accent/10 hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between">
+                <div key={project.id} className="bg-white p-8 rounded-3xl border border-slate-100 hover:border-accent/20 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                   <div>
-                    <div className="mb-10 flex justify-between items-center">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
-                        <Target size={20} />
-                      </div>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{project.type}</span>
-                    </div>
-                    <h6 className="text-3xl font-bold text-text-primary mb-6 group-hover:text-accent transition-colors">{project.title}</h6>
-                    <p className="text-text-secondary text-lg leading-relaxed mb-10 font-light">
+                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest">{project.type}</span>
+                    <h6 className="text-xl font-bold text-text-primary mt-3 mb-4 group-hover:text-accent transition-colors">{project.title}</h6>
+                    <p className="text-text-secondary text-sm leading-relaxed mb-6">
                       {project.description}
                     </p>
                   </div>
-                  <a href="#" className="inline-flex items-center gap-3 text-xs font-bold text-accent uppercase tracking-[0.2em] group/link">
+                  <a href="#" className="inline-flex items-center gap-2 text-xs font-bold text-text-primary hover:text-accent transition-colors group/link">
                     <span>{project.ctaText}</span>
-                    <ArrowRight size={14} className="group-hover/link:translate-x-2 transition-transform" />
+                    <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
                   </a>
                 </div>
               ))}

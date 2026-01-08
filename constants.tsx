@@ -61,14 +61,6 @@ export const PROJECTS: EnhancedProject[] = [
 
 export const SECONDARY_PROJECTS: Project[] = [
   {
-    id: 'ai-news',
-    title: 'AI News App',
-    headline: 'Recommendation strategy that significantly increased session time',
-    type: 'AI Product Incubation',
-    description: 'Designed an AI-driven news experience focused on improving content relevance and session depth through intelligent recommendations.',
-    ctaText: 'View Case Study',
-  },
-  {
     id: 'apple-stock',
     title: 'Apple Stock Prediction',
     headline: 'Technical ML modeling',
