@@ -709,7 +709,7 @@ const SelectedWork: React.FC<{
                       {project.description}
                     </p>
                   </div>
-                  {project.id === 'apple-stock' ? (
+                  {(project.id === 'apple-stock' || project.id === 'elevn-teardown') ? (
                     <button
                       onClick={() => onCaseStudyClick(project.id)}
                       className="inline-flex items-center gap-2 text-xs font-bold text-text-primary hover:text-accent transition-colors group/link cursor-pointer"
@@ -1033,6 +1033,38 @@ const AppleStockCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) =
   );
 };
 
+const ElevnCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-white">
+      {/* Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <button onClick={onBack} className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
+            <ArrowRight className="rotate-180" size={18} />
+            <span className="font-medium">Back to Portfolio</span>
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">
+            Get in Touch
+          </a>
+        </div>
+      </nav>
+
+      {/* Centered Title */}
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
+            Elevn <span className="text-accent">Case Study</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CaseStudyPage: React.FC<{ projectId: string; onBack: () => void }> = ({ projectId, onBack }) => {
   const project = [...PROJECTS, ...SECONDARY_PROJECTS].find(p => p.id === projectId);
   const caseStudy = CASE_STUDIES[projectId];
@@ -1270,6 +1302,10 @@ const App: React.FC = () => {
 
   if (currentPage === 'apple-stock') {
     return <AppleStockCaseStudyPage onBack={handleBackToHome} />;
+  }
+
+  if (currentPage === 'elevn-teardown') {
+    return <ElevnCaseStudyPage onBack={handleBackToHome} />;
   }
 
   return (
