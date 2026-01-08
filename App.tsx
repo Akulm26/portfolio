@@ -484,7 +484,6 @@ const Header: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#work' },
     { name: 'Work', href: '#approach' },
-    { name: 'Philosophy', href: '#philosophy' },
   ];
 
   useEffect(() => {
@@ -774,40 +773,6 @@ const Approach: React.FC = () => {
   );
 };
 
-const Philosophy: React.FC = () => {
-  const icons = [<Activity size={24} />, <Brain size={24} />, <Microscope size={24} />, <Layers size={24} />, <Search size={24} />, <RefreshCw size={24} />];
-  return (
-    <section id="philosophy" className="py-32 bg-slate-900 text-white scroll-mt-20 overflow-hidden">
-      <div className="container mx-auto px-6 relative">
-        <div className="mb-24">
-          <h2 className="text-accent font-bold tracking-widest uppercase text-xs mb-8 flex items-center gap-3">
-            <span className="w-8 h-[2px] bg-accent"></span> Mental Models
-          </h2>
-          <h3 className="text-4xl md:text-8xl font-display font-bold tracking-tighter leading-none">Principled <br /> Product Craft.</h3>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/5 blur-[150px] -z-10 pointer-events-none"></div>
-          {PRINCIPLES.map((p, idx) => (
-            <div key={idx} className="group relative bg-white/[0.03] border border-white/10 p-10 rounded-[40px] hover:bg-white/[0.08] hover:border-accent/40 transition-all duration-500 overflow-hidden flex flex-col justify-between h-[340px]">
-              <span className="absolute -bottom-8 -right-4 text-[140px] font-display font-black text-white/[0.03] group-hover:text-accent/[0.05] transition-colors duration-500 select-none">0{idx + 1}</span>
-              <div className="relative z-10">
-                <div className="mb-8 p-4 bg-white/5 rounded-2xl w-fit text-accent group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                  {icons[idx % icons.length]}
-                </div>
-                <h4 className="text-2xl font-display font-bold text-white mb-6 leading-tight group-hover:text-accent transition-colors">{p.title}</h4>
-                <p className="text-slate-400 text-base leading-relaxed font-light group-hover:text-slate-200 transition-colors">{p.description}</p>
-              </div>
-              <div className="relative z-10 pt-6">
-                <div className="h-[2px] w-8 bg-accent/30 group-hover:w-full transition-all duration-700"></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const About: React.FC = () => {
   return (
     <section id="about" className="py-48 bg-white scroll-mt-20 overflow-hidden">
@@ -926,7 +891,6 @@ const App: React.FC = () => {
       />
       <CapabilitiesSection />
       <Approach />
-      <Philosophy />
       <About />
       <Contact />
       <Footer />
