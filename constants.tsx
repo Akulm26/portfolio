@@ -31,7 +31,7 @@ export const PROJECTS: EnhancedProject[] = [
     description: 'Built a working AI-driven expense intelligence prototype that surfaces forgotten subscriptions, reduces cancellation friction, and detects recurring overcharges and spending anomalies across digital payments.',
     ctaText: 'View Case Study',
     isFeatured: true,
-    imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1600&auto=format&fit=crop',
+    imageUrl: 'https://i.ibb.co/MkQ4gZ0B/Screenshot-2026-01-07-at-22-54-35.png',
   },
   {
     id: 'hinge-roadmap',
