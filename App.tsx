@@ -609,7 +609,7 @@ const Hero: React.FC = () => {
                 <span className="text-[10px] font-bold uppercase tracking-widest text-[#0077B5] opacity-0 group-hover/action:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/action:translate-y-0">LinkedIn</span>
               </a>
 
-              <a href="tel:+1234567890" className="group/action flex flex-col items-center gap-2 cursor-pointer no-underline outline-none">
+              <a href="tel:+918847336864" className="group/action flex flex-col items-center gap-2 cursor-pointer no-underline outline-none">
                 <div className="w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-text-primary hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-green-600/30 hover:-translate-y-2 active:scale-95">
                   <Phone size={24} />
                 </div>
