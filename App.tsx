@@ -484,6 +484,7 @@ const Header: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#work' },
     { name: 'Work', href: '#approach' },
+    { name: 'Philosophy', href: '#philosophy' },
   ];
 
   useEffect(() => {
