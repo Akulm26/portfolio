@@ -78,11 +78,11 @@ export const SECONDARY_PROJECTS: Project[] = [
   },
   {
     id: 'udemy-sense',
-    title: 'Product Sense - Udemy',
-    headline: 'Improving EdTech engagement',
-    type: 'EdTech Strategy',
-    description: 'Product sense exercise identifying core user friction in course completion rates on Udemy and proposing structural gamification improvements.',
-    ctaText: 'View Strategy',
+    title: 'Product Teardown - Udemy',
+    headline: 'Online Learning Marketplace Analysis',
+    type: 'Product Analysis',
+    description: 'Comprehensive analysis of Udemy\'s marketplace dynamics, identifying search and ranking bias issues, and proposing balanced visibility solutions to improve the content ecosystem.',
+    ctaText: 'View Teardown',
   },
 ];
 
@@ -309,24 +309,27 @@ export const CASE_STUDIES: Record<string, CaseStudyContent> = {
   },
   'udemy-sense': {
     id: 'udemy-sense',
-    overview: 'A product sense exercise identifying core user friction in course completion rates on Udemy and proposing structural gamification improvements.',
-    problem: 'Online learning platforms face notoriously low completion rates—often below 15%. Udemy\'s self-paced model, while flexible, lacks the accountability structures that drive course completion.',
+    overview: 'A comprehensive product teardown of Udemy\'s marketplace dynamics, examining user segmentation, competitive positioning, and platform-level challenges in balancing quality with discoverability.',
+    problem: 'Udemy operates a two-sided marketplace connecting knowledge hunters (learners) with knowledge providers (instructors). While the platform excels at scale and affordability, it faces critical challenges: new quality courses struggle with visibility, learners see repetitive top courses, and the ecosystem risks overdependence on a few mega-courses. This search and ranking bias threatens both content diversity and instructor retention.',
     approach: [
-      'Analyzed publicly available data on MOOC completion rates and contributing factors',
-      'Mapped the learner journey from course discovery to certification',
-      'Studied successful gamification implementations in adjacent industries',
-      'Designed a framework for progressive commitment and social accountability'
+      'Segmented users into three groups: Knowledge Hunters (students, professionals, job seekers), Knowledge Providers (independent instructors), and Businesses (organizations)',
+      'Analyzed pain points and value drivers for each segment through user journey mapping',
+      'Conducted competitive analysis comparing Udemy with LinkedIn Learning and Skillshare',
+      'Identified root causes of marketplace imbalance, focusing on discoverability bias and ranking monopolies'
     ],
-    solution: 'A gamification system that combines streak mechanics, cohort-based learning options, and milestone celebrations to increase completion rates without compromising the self-paced value proposition.',
+    solution: 'Proposed a balanced visibility system using quality-weighted rotation and A/B testing. The solution allocates percentage slots in search results to new or low-visibility high-quality courses, implements periodic rotation for fair exposure, and measures impact on learner satisfaction and conversion. This breaks the monopoly cycle while maintaining content quality standards.',
     results: [
-      { metric: 'Completion Impact', value: '+45%', description: 'Projected increase in course completion rates' },
-      { metric: 'Engagement', value: '+30%', description: 'Estimated increase in weekly active learning time' },
-      { metric: 'NPS Impact', value: '+15 pts', description: 'Projected improvement in learner satisfaction' }
+      { metric: 'Instructor Retention', value: 'Improved', description: 'Fair exposure opportunity for new instructors, sustained engagement' },
+      { metric: 'Content Diversity', value: 'Expanded', description: 'Learners discover fresh, niche, and innovative courses' },
+      { metric: 'Revenue Distribution', value: 'Balanced', description: 'Healthier ecosystem reduces overdependence on mega-courses' },
+      { metric: 'Platform Health', value: 'Strengthened', description: 'Stronger instructor pipeline with more unique offerings' }
     ],
     learnings: [
-      'Flexibility and accountability aren\'t mutually exclusive with the right design',
-      'Social features work best when opt-in and low-pressure',
-      'Progress visibility is more motivating than rewards for adult learners'
+      'Marketplace success depends on both sides thriving - optimizing only for today\'s top performers creates fragility',
+      '"Speed to market" is Udemy\'s real competitive advantage - experts can teach trending topics within days',
+      'Deep discounts expand the market, not just share - bringing in learners who wouldn\'t pay otherwise',
+      'Credentials matter differently by segment - hobbyists value completion, professionals need career-aligned credentials',
+      'Enterprise (Udemy Business) is a different game - diversifies revenue and positions platform as workforce development partner'
     ]
   }
 };

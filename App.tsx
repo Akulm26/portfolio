@@ -2987,14 +2987,439 @@ const UdemyCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </div>
       </nav>
 
-      {/* Centered Title */}
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
-            Udemy <span className="text-accent">Case Study</span>
-          </h1>
+      {/* Hero Section */}
+      <section className="pt-20 pb-8">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight mb-6">
+              Udemy <span className="text-accent">Case Study</span>
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Udemy Product Teardown</h2>
+              <p className="text-xl text-accent font-semibold mb-2">Online Learning Marketplace Analysis</p>
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">User Segmentation</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Marketplace Dynamics</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Competitive Analysis</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Feature Breakdown</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Product Strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Point */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Pain Point</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>
+                <span className="font-semibold text-text-primary">Learning is fragmented.</span>
+              </p>
+              <p>
+                Students juggle YouTube tutorials, blog posts, college notes, and paid courses across multiple platforms. Working professionals want to upskill but don't know which courses are credible. Job seekers need affordable, practical training but fear wasting money on outdated content. Freelancers need to stay relevant but can't afford expensive bootcamps.
+              </p>
+              <p>
+                On the other side, experts with valuable knowledge struggle to reach learners. Building an audience from scratch is hard. Setting up a website, payment processing, and video hosting is a technical nightmare. Traditional institutions gatekeep who gets to teach.
+              </p>
+              <p>
+                <span className="font-semibold text-text-primary">Udemy sits in the middle - a marketplace connecting knowledge hunters with knowledge providers.</span> But marketplaces have their own problems: quality inconsistency, discoverability bias, and the challenge of serving both individuals and enterprises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Approach</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p>
+                I segmented Udemy's users into three groups and analyzed their needs, pain points, and what they value most:
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* Knowledge Hunters */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Knowledge Hunters</h3>
+                <p className="text-sm text-text-secondary mb-4 italic">(Students, professionals, job seekers, freelancers, exam aspirants, retired individuals)</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-slate-50 rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Pain Point</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What They Value</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary text-sm">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Information overload across platforms</td>
+                        <td className="py-3 px-4">Affordability</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Difficulty identifying credible instructors</td>
+                        <td className="py-3 px-4">Flexibility</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Fear of wasting money on wrong courses</td>
+                        <td className="py-3 px-4">Clear guidance on what to learn next</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Content not localized to their context</td>
+                        <td className="py-3 px-4">Relevant certificates</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4">Want quick, practical, outcome-oriented learning</td>
+                        <td className="py-3 px-4">Social proof (ratings, reviews)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Knowledge Providers */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Knowledge Providers</h3>
+                <p className="text-sm text-text-secondary mb-4 italic">(Independent instructors)</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-slate-50 rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Pain Point</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What They Value</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary text-sm">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Hard to gain visibility without existing audience</td>
+                        <td className="py-3 px-4">Discoverability</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Course ranking volatility makes revenue unpredictable</td>
+                        <td className="py-3 px-4">Stable earnings</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Updating content is time-consuming with no guaranteed payout</td>
+                        <td className="py-3 px-4">Transparent analytics</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">No strong credentialing to stand out</td>
+                        <td className="py-3 px-4">Easy course creation</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4">Heavy competition leads to price pressure</td>
+                        <td className="py-3 px-4">Access to global student base</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Businesses */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Businesses</h3>
+                <p className="text-sm text-text-secondary mb-4 italic">(Organizations)</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-slate-50 rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Pain Point</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What They Value</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary text-sm">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Hard to ensure consistent upskilling across teams</td>
+                        <td className="py-3 px-4">Scalable training</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Need analytics and progress tracking</td>
+                        <td className="py-3 px-4">Team analytics</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Want content aligned to emerging tech skills</td>
+                        <td className="py-3 px-4">Curated learning paths</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4">Require enterprise-grade reliability</td>
+                        <td className="py-3 px-4">High completion rates</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4">Employees don't complete courses unless tracked</td>
+                        <td className="py-3 px-4">Enterprise integrations (SSO, LMS)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Competitive Landscape */}
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold text-text-primary mb-6">Competitive Landscape</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Platform</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Strengths</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Weaknesses</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary text-sm">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium text-text-primary">Udemy</td>
+                        <td className="py-3 px-4 align-top">Massive diverse catalog; flexible deep-discount pricing widens access</td>
+                        <td className="py-3 px-4 align-top">Quality inconsistency from open marketplace; weak credential signaling</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium text-text-primary">LinkedIn Learning</td>
+                        <td className="py-3 px-4 align-top">Career-aligned content powered by LinkedIn data; enterprise-grade curation</td>
+                        <td className="py-3 px-4 align-top">Credentials weak outside LinkedIn; limited hands-on practice</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 align-top font-medium text-text-primary">Skillshare</td>
+                        <td className="py-3 px-4 align-top">Project-driven learning for creatives; 1-1 sessions and digital products</td>
+                        <td className="py-3 px-4 align-top">Thin enterprise/technical catalog; minimal formal certification</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Solution</h2>
+
+            <div className="space-y-8">
+              {/* Identified Problem */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Identified Problem: Search and ranking bias</h3>
+                <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-4 mb-6">
+                  <p className="text-text-secondary">
+                    New and niche courses have poor visibility regardless of quality. Instructors with excellent content struggle to break through unless they invest heavily in paid promotion. Learners see the same top courses repeatedly. The platform misses out on fresh, high-quality content.
+                  </p>
+                </div>
+
+                <h4 className="text-xl font-bold text-text-primary mb-4">Why this matters:</h4>
+                <ul className="list-disc list-inside space-y-2 text-text-secondary mb-6">
+                  <li>Content diversity shrinks - users see fewer innovative or niche topics</li>
+                  <li>New instructors give up because they can't gain traction</li>
+                  <li>Udemy risks losing revenue from new instructor pipeline</li>
+                  <li>Overdependence on a few "mega-courses" makes the ecosystem fragile</li>
+                </ul>
+              </div>
+
+              {/* Proposed Solution */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Proposed Solution: Balanced visibility through A/B testing</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Element</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What it does</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary text-sm">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Quality-weighted rotation</td>
+                        <td className="py-3 px-4">Allocate a percentage of search results and recommendation slots to new or low-visibility high-quality courses</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Periodic rotation</td>
+                        <td className="py-3 px-4">Rotate eligible courses to ensure fair exposure over time</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 align-top font-medium">A/B testing framework</td>
+                        <td className="py-3 px-4">Balance learner satisfaction with course visibility - measure if new course exposure hurts or helps conversion</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h4 className="text-xl font-bold text-text-primary mb-4 mt-6">Why this works:</h4>
+                <ul className="list-disc list-inside space-y-2 text-text-secondary">
+                  <li>Breaks the monopoly cycle - new quality courses get visibility</li>
+                  <li>More creators stay engaged, producing diverse and innovative content</li>
+                  <li>Reduces overdependence on a few top courses</li>
+                  <li>Keeps the content ecosystem healthy and competitive</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Impact</h2>
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full bg-slate-50 rounded-xl border border-slate-200">
+                <thead>
+                  <tr className="border-b border-slate-300">
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Stakeholder</th>
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Current Problem</th>
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Expected Outcome</th>
+                  </tr>
+                </thead>
+                <tbody className="text-text-secondary text-sm">
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">New Instructors</td>
+                    <td className="py-3 px-4 align-top">Poor visibility despite quality content</td>
+                    <td className="py-3 px-4 align-top">Fair exposure opportunity, sustained engagement</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">Learners</td>
+                    <td className="py-3 px-4 align-top">See same top courses repeatedly</td>
+                    <td className="py-3 px-4 align-top">Discover fresh, niche, innovative content</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">Platform</td>
+                    <td className="py-3 px-4 align-top">Revenue concentration in few mega-courses</td>
+                    <td className="py-3 px-4 align-top">Healthier, more diverse content ecosystem</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">Long-term</td>
+                    <td className="py-3 px-4 align-top">New instructors churn out</td>
+                    <td className="py-3 px-4 align-top">Stronger instructor pipeline, more unique offerings</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features That Already Work */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Key Features That Already Work</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full bg-white rounded-xl border border-slate-200">
+                <thead>
+                  <tr className="border-b border-slate-300">
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Feature</th>
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Problem It Solves</th>
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Why It Works</th>
+                  </tr>
+                </thead>
+                <tbody className="text-text-secondary text-sm">
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">Massive course library (200K+ courses)</td>
+                    <td className="py-3 px-4 align-top">Learners struggle to find one platform for professional + personal learning</td>
+                    <td className="py-3 px-4 align-top">Single point of reference saves time; independent instructors allow trending topics without heavy in-house production costs</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">Deep discount pricing model</td>
+                    <td className="py-3 px-4 align-top">High cost of formal education prevents freshers from upskilling</td>
+                    <td className="py-3 px-4 align-top">Radically lowers entry barrier; no subscription fee reduces psychological risk; high volume compensates for low margins</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 align-top font-medium text-text-primary">Easy instructor onboarding</td>
+                    <td className="py-3 px-4 align-top">Technical and marketing barriers prevent experts from teaching</td>
+                    <td className="py-3 px-4 align-top">Anyone can teach without credentials; record today, go live tomorrow; tap into global learner base within days</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Learned */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">What I Learned</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold mb-3">Marketplace success depends on both sides thriving.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Udemy's strength is connecting knowledge hunters with knowledge providers. But if new instructors can't get visibility, they leave. If learners only see the same courses, they get bored. A healthy marketplace requires balance - not just optimizing for today's top performers.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">"Speed to market" is a real competitive advantage.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Udemy's open model means an expert can record a course on a new technology and have it live globally within days. Traditional education can't compete with that agility. This is why Udemy can offer "skills at the speed of the market."
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Deep discounts expand the market, not just share.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  By dropping courses to under $10, Udemy doesn't just compete with other platforms - it brings in people who would never have paid for online learning at all. Students, early-career professionals, and learners in developing markets can experiment without financial strain.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Credentials matter differently to different segments.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  For job seekers and professionals, Udemy certificates carry less weight than LinkedIn Learning or institution-backed credentials. But for personal learners and hobbyists, completion certificates still provide a sense of accomplishment. The platform serves both - but shouldn't pretend to be something it's not.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Enterprise is a different game.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Udemy Business serves organizations with curated learning paths, team analytics, and integrations. This B2B play diversifies revenue and positions Udemy as a partner in workforce development - not just a consumer marketplace.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
+            <p className="text-text-secondary mb-8">Let's discuss how I can help with your product challenges.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://docs.google.com/document/d/1lrNnv3MD08uTmTRWmta6iX3mh-Cxp29KsCc36SYV3Co/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2"
+              >
+                <ExternalLink size={20} />
+                <span>View Full Case Study</span>
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all flex items-center gap-2">
+                <Mail size={20} />
+                <span>Get in Touch</span>
+              </a>
+              <button onClick={onBack} className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all">
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
