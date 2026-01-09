@@ -239,24 +239,27 @@ export const CASE_STUDIES: Record<string, CaseStudyContent> = {
   },
   'nike-app': {
     id: 'nike-app',
-    overview: 'A deep-dive product analysis of Nike\'s mobile app with prioritized recommendations to improve user engagement and purchase conversion through personalized membership experiences.',
-    problem: 'Nike\'s app struggles with engagement between purchases. Users open the app with intent to buy but don\'t return for content, community, or fitness features. This creates missed opportunities for relationship building and repeat purchases.',
+    overview: 'Nike\'s app isn\'t just a store - it\'s a lifestyle ecosystem. Members get exclusive drops, personalized recommendations, community events, and access to Nike\'s most innovative products. But longtime members with low purchase frequency are quietly disengaging, creating a hidden retention problem.',
+    problem: 'Longtime members with low purchase frequency aren\'t receiving relevant updates or compelling reasons to return. The rewards feel stale, and casual users aren\'t being converted into active customers. The app feels less engaging over time - leading to churn and stagnant monthly active users. For Nike, this is a retention problem hiding in plain sight.',
     approach: [
-      'Conducted competitive analysis across retail, fitness, and lifestyle apps',
-      'Mapped the current user journey and identified engagement drop-off points',
-      'Analyzed the Jobs-to-be-Done framework for Nike app users',
-      'Prioritized opportunities using RICE scoring methodology'
+      'Segmented Nike\'s user base into Casual Users (platform explorers, event-driven shoppers, price-sensitive buyers), Active Users (performance athletes, content creators, frequent campaign responders), and Brand Endorsers (sports personalities driving brand recall)',
+      'Analyzed Nike\'s key features: Nike Member Pass (QR-based access to exclusive events), Nike By You (AI-powered customization with virtual rotation), and Chat with Nike Experts (real human support)',
+      'Conducted competitive analysis: Nike (robust member ecosystem but region-restricted drops), Puma (strong lifestyle collaborations but minimal community), Adidas (sustainability focus but poor chat support)',
+      'Identified the core problem: Members sign up but don\'t stay engaged without frequent, personalized rewards'
     ],
-    solution: 'A redesigned experience that integrates fitness tracking, style recommendations, and exclusive content into a cohesive membership journey. Key features include personalized product recommendations based on activity data and a gamified rewards system.',
+    solution: 'Tiered engagement system with frequent, personalized rewards. Elements include: Tiered Member Rewards (rewards based on engagement, not just purchases), Personalized Offers (tailored to browsing history and favorite sports), Surprise Benefits (unexpected perks like early access), Limited-Time Promotions (app-exclusive deals creating urgency), and Re-engagement Content (curated stories and events for dormant users). This creates anticipation and value, generating richer behavioral data for better recommendations.',
     results: [
-      { metric: 'Conversion', value: 'Optimized', description: 'Projected improvement in browse-to-purchase conversion' },
-      { metric: 'Session Frequency', value: '+60%', description: 'Estimated increase in weekly app opens' },
-      { metric: 'Member Engagement', value: '+35%', description: 'Projected increase in membership feature usage' }
+      { metric: 'Monthly Active Users', value: 'Increase', description: 'Dormant members return to the app more frequently' },
+      { metric: 'Retention Rate', value: 'Improve', description: 'Users stay engaged longer due to ongoing rewards' },
+      { metric: 'Purchase Frequency', value: 'Increase', description: 'Personalized offers convert browsers into buyers' },
+      { metric: 'Customer Lifetime Value', value: 'Grow', description: 'Engaged members spend more over time' },
+      { metric: 'Churn Rate', value: 'Decrease', description: 'Fewer users quietly abandon the app' }
     ],
     learnings: [
-      'Fitness and commerce can reinforce each other when properly integrated',
-      'Exclusive access is more motivating than discounts for brand-loyal customers',
-      'Personalization must feel helpful, not surveillance-like'
+      'Membership isn\'t engagement. Signing up is easy. Staying active is hard. Nike\'s member ecosystem is powerful, but it needs to continuously reward users - even the quiet ones - to prevent silent churn.',
+      'Community is a competitive moat. Puma has collaborations. Adidas has sustainability. But Nike\'s Run Club, Training Club, and exclusive events create emotional connection that competitors struggle to replicate.',
+      'Personalization drives loyalty. Nike By You lets users design their own shoes. AI-powered recommendations surface relevant products. These features make users feel seen - and that feeling converts to purchases.',
+      'Human support still matters. In an age of chatbots, Nike\'s real human experts stand out. Trust is built through authentic interaction, not automated replies.'
     ]
   },
   'apple-stock': {

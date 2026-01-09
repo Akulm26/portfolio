@@ -1773,14 +1773,391 @@ const NikeCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </div>
       </nav>
 
-      {/* Centered Title */}
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
-            Nike Mobile App <span className="text-accent">Case Study</span>
-          </h1>
+      {/* Hero Section */}
+      <section className="pt-32 pb-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight mb-8">
+              Nike Mobile App <span className="text-accent">Case Study</span>
+            </h1>
+            <div className="mb-8">
+              <a
+                href="https://docs.google.com/document/d/11uEhNXe_2Gsz_WBqaG-mwMipEthXKyH-838imnIESNw/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-accent/30"
+              >
+                <ExternalLink size={20} />
+                <span>View Full Analysis</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Nike Mobile App</h2>
+              <p className="text-xl text-accent font-semibold mb-2">Product Deconstruction & Improvement</p>
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">User Segmentation</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Competitive Analysis</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Feature Breakdown</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Retention Strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Point */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Pain Point</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>
+                Nike's app isn't just a store - it's a <span className="font-semibold text-accent">lifestyle ecosystem</span>. Members get exclusive drops, personalized recommendations, community events, and access to Nike's most innovative products.
+              </p>
+              <p className="text-2xl font-bold text-text-primary">But there's a gap.</p>
+              <p>
+                Longtime members with low purchase frequency are quietly disengaging.
+              </p>
+              <p>
+                These users signed up, maybe bought something once, and then... nothing. They don't receive relevant updates. They don't see compelling reasons to return. The rewards feel stale. And slowly, they drift away.
+              </p>
+              <p>
+                For Nike, this is a <span className="font-semibold text-text-primary">retention problem hiding in plain sight</span>. Casual users aren't being converted into active customers. The app feels less engaging for them over time - leading to churn and stagnant monthly active users.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Approach</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p>
+                I started by <span className="font-semibold text-text-primary">segmenting Nike's user base</span> to understand who uses the app and why:
+              </p>
+            </div>
+
+            {/* User Segmentation Cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Casual Users</h3>
+                <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>• Platform explorers</li>
+                  <li>• First-time visitors</li>
+                  <li>• Event-driven shoppers</li>
+                  <li>• Price-sensitive buyers</li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Active Users</h3>
+                <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>• Performance athletes</li>
+                  <li>• Content creators</li>
+                  <li>• Campaign responders</li>
+                  <li>• Tech-savvy buyers (ages 15-45)</li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Brand Endorsers</h3>
+                <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>• Sports personalities</li>
+                  <li>• Michael Jordan</li>
+                  <li>• Serena Williams</li>
+                  <li>• Drive brand recall</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Feature Analysis */}
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p className="font-semibold text-text-primary">Then I analyzed Nike's key features to understand what's working:</p>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Nike Member Pass</h3>
+                    <p className="text-sm text-text-secondary mb-3">Creates community belonging and access to exclusive events</p>
+                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                      <p className="text-xs font-semibold text-text-primary mb-1">Why it works:</p>
+                      <p className="text-xs text-text-secondary">QR-based pass lets users check into Run Club, Training Club, and Nike events - driving engagement and impulse buying</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Nike By You (Customization)</h3>
+                    <p className="text-sm text-text-secondary mb-3">Users want products that feel uniquely theirs</p>
+                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                      <p className="text-xs font-semibold text-text-primary mb-1">Why it works:</p>
+                      <p className="text-xs text-text-secondary">Lets users customize shoe colors and materials; AI-powered virtual rotation shows the shoe from all angles before purchase</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Chat with Nike Experts</h3>
+                    <p className="text-sm text-text-secondary mb-3">Users have sizing/product questions but hate bots</p>
+                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                      <p className="text-xs font-semibold text-text-primary mb-1">Why it works:</p>
+                      <p className="text-xs text-text-secondary">Real human representatives build trust and make customers feel connected to the brand</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Competitive Landscape */}
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-6">
+              <p className="font-semibold text-text-primary">Competitive landscape:</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">Nike</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-green-600 mb-1">Strength</p>
+                    <p className="text-sm text-text-secondary">Robust member ecosystem, personalized shopping, expert support</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-red-600 mb-1">Weakness</p>
+                    <p className="text-sm text-text-secondary">Region-restricted drops, premium pricing excludes budget shoppers</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">Puma</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-green-600 mb-1">Strength</p>
+                    <p className="text-sm text-text-secondary">Strong fashion/music/lifestyle collaborations</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-red-600 mb-1">Weakness</p>
+                    <p className="text-sm text-text-secondary">Minimal in-app community, less immersive storytelling</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">Adidas</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-green-600 mb-1">Strength</p>
+                    <p className="text-sm text-text-secondary">Sustainability as core USP, strong regional sports focus</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-red-600 mb-1">Weakness</p>
+                    <p className="text-sm text-text-secondary">Chat support has frequent drop-offs, poor responsiveness</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Solution</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p className="font-semibold text-text-primary">Problem:</p>
+              <p>Longtime members with low purchase frequency don't receive regular updates, relevant offers, or enhanced benefits - making the app feel stale.</p>
+              <p className="font-semibold text-text-primary mt-6">Proposed Solution:</p>
+              <p className="text-xl font-bold text-accent">Tiered engagement system with frequent, personalized rewards</p>
+            </div>
+
+            {/* Solution Components */}
+            <div className="space-y-4 mb-8">
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Tiered Member Rewards</h3>
+                <p className="text-sm text-text-secondary">More frequent rewards based on engagement level - not just purchases</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Personalized Offers</h3>
+                <p className="text-sm text-text-secondary">Tailored promotions based on browsing history, favorite sports, and past purchases</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Surprise Benefits</h3>
+                <p className="text-sm text-text-secondary">Unexpected perks (early access, exclusive content) to create anticipation</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Limited-Time Promotions</h3>
+                <p className="text-sm text-text-secondary">App-exclusive deals that create urgency to revisit</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Re-engagement Content</h3>
+                <p className="text-sm text-text-secondary">Curated stories, new arrivals, and events pushed to dormant users</p>
+              </div>
+            </div>
+
+            {/* Why This Works */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 className="text-xl font-bold text-text-primary mb-4">Why this works:</h3>
+              <p className="text-text-secondary leading-relaxed">
+                Rewards and exclusive benefits drive a sense of value and anticipation. Users interact with the app more often - even if they're not buying immediately. This generates richer behavioral data, allowing Nike to tailor future recommendations even better. The result: <span className="font-semibold text-accent">higher retention, more app-driven sales, and casual users converting into loyal customers</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Impact</h2>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Monthly Active Users</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-green-600">Increase</div>
+                </div>
+                <p className="text-sm text-text-secondary">Dormant members return to the app more frequently</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Retention Rate</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-green-600">Improve</div>
+                </div>
+                <p className="text-sm text-text-secondary">Users stay engaged longer due to ongoing rewards</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Purchase Frequency</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-green-600">Increase</div>
+                </div>
+                <p className="text-sm text-text-secondary">Personalized offers convert browsers into buyers</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Customer Lifetime Value</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-green-600">Grow</div>
+                </div>
+                <p className="text-sm text-text-secondary">Engaged members spend more over time</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Churn Rate</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-green-600">Decrease</div>
+                </div>
+                <p className="text-sm text-text-secondary">Fewer users quietly abandon the app</p>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+              <p className="text-sm font-semibold text-text-primary mb-2">Strategic alignment:</p>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Nike's mission is to bring inspiration and innovation to every athlete. A tiered engagement system ensures that all members - not just power users - feel valued and connected to the Nike ecosystem.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Learned */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">What I Learned</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold mb-3">Membership isn't engagement.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Signing up is easy. Staying active is hard. Nike's member ecosystem is powerful, but it needs to continuously reward users - even the quiet ones - to prevent silent churn.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Community is a competitive moat.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Puma has collaborations. Adidas has sustainability. But Nike's Run Club, Training Club, and exclusive events create emotional connection that competitors struggle to replicate.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Personalization drives loyalty.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Nike By You lets users design their own shoes. AI-powered recommendations surface relevant products. These features make users feel seen - and that feeling converts to purchases.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Human support still matters.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  In an age of chatbots, Nike's real human experts stand out. Trust is built through authentic interaction, not automated replies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
+            <p className="text-text-secondary mb-8">Let's discuss how I can help with your product challenges.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://docs.google.com/document/d/11uEhNXe_2Gsz_WBqaG-mwMipEthXKyH-838imnIESNw/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2"
+              >
+                <ExternalLink size={20} />
+                <span>View Full Analysis</span>
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all flex items-center gap-2">
+                <Mail size={20} />
+                <span>Get in Touch</span>
+              </a>
+              <button onClick={onBack} className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all">
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
