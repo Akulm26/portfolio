@@ -2588,14 +2588,27 @@ const ElevnCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </div>
       </nav>
 
-      {/* Centered Title */}
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
-            Elevn <span className="text-accent">Case Study</span>
-          </h1>
+      {/* Hero Section */}
+      <section className="pt-20 pb-8">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight mb-6">
+              Elevn <span className="text-accent">Case Study</span>
+            </h1>
+            <div className="mb-6">
+              <a
+                href="https://medium.com/@am5376a/elevn-product-teardown-6486dec11356"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-accent/30"
+              >
+                <ExternalLink size={20} />
+                <span>Read on Medium</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
