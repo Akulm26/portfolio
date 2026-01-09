@@ -2994,6 +2994,17 @@ const UdemyCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight mb-6">
               Udemy <span className="text-accent">Case Study</span>
             </h1>
+            <div className="mb-6">
+              <a
+                href="https://docs.google.com/document/d/1lrNnv3MD08uTmTRWmta6iX3mh-Cxp29KsCc36SYV3Co/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-accent/30"
+              >
+                <ExternalLink size={20} />
+                <span>View Full Case Study</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
