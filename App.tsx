@@ -2609,6 +2609,328 @@ const ElevnCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           </div>
         </div>
       </section>
+
+      {/* Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Elevn Product Teardown</h2>
+              <p className="text-xl text-accent font-semibold mb-2">Women-First Dating Platform Analysis</p>
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Marketplace Dynamics</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">User Research</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Trust Design</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Root Cause Analysis</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Product Strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Point */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Pain Point</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>
+                Elevn promises something Indian dating apps haven't delivered: <span className="font-semibold text-accent">safety, trust, and real-world connections.</span>
+              </p>
+              <p>
+                Women lead the platform. Men can only join if endorsed by a woman. Profiles are verified. The goal isn't endless swiping - it's meeting people offline, in real life.
+              </p>
+              <p>
+                The mission is compelling. But the execution has gaps.
+              </p>
+              <p>
+                I tested Elevn with two profiles - one long-term user (Profile A) and one fresh account (Profile B). What I found matched what users are saying online: the promise and reality don't align.
+              </p>
+              <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-4">
+                <div>
+                  <p className="font-semibold text-text-primary mb-2">Profile A (long-term usage):</p>
+                  <ul className="list-disc list-inside space-y-1 text-text-secondary">
+                    <li>Only one match over several months</li>
+                    <li>Virtually no local profiles in Tier-2 cities like Chandigarh</li>
+                    <li>Had to expand distance to 200km+ just to see options</li>
+                    <li>Matches were predominantly from Delhi NCR, Kolkata, Mumbai</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-text-primary mb-2">Profile B (new user):</p>
+                  <ul className="list-disc list-inside space-y-1 text-text-secondary">
+                    <li>Completed full verification and profile setup</li>
+                    <li>Still waitlisted with no clear timeline</li>
+                    <li>Endorsement from a female user pushed as the only unlock</li>
+                    <li>Paywall messaging appeared before I could even access the platform</li>
+                  </ul>
+                </div>
+              </div>
+              <p>
+                The problem isn't the women-first philosophy. The problem is that Elevn currently behaves more like a <span className="font-semibold text-text-primary">restricted members-only club</span> than a balanced, high-intent marketplace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Approach</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p>
+                I evaluated Elevn across four dimensions:
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">1. Onboarding & Verification</h3>
+                <ul className="list-disc list-inside space-y-2 text-text-secondary">
+                  <li>Identity verification, strict photo rules, interest prompts - all reinforce safety</li>
+                  <li>But verification alone doesn't grant access</li>
+                  <li>Endorsement dominates as the final gateway</li>
+                  <li>Monetization surfaces at the waitlist stage - before any value is delivered</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">2. Match Quality & Liquidity</h3>
+                <ul className="list-disc list-inside space-y-2 text-text-secondary">
+                  <li>Match frequency was extremely low</li>
+                  <li>Local availability was virtually non-existent in Tier-2 cities</li>
+                  <li>IRL-first value proposition breaks when matches are 200km away</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">3. Marketplace Metrics</h3>
+                <p className="text-text-secondary mb-2"><span className="font-semibold text-text-primary">North Star Metric:</span> Meaningful offline connections per active user per month</p>
+                <p className="text-text-secondary"><span className="font-semibold text-text-primary">Supporting Metrics:</span> Male activation rate, female-to-male ratio per city, local liquidity, mutual match rate, first-message rate, retention (W1, W4)</p>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-text-primary mb-3">4. Root Cause Analysis</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-2 pr-4 font-semibold text-text-primary">Root Cause</th>
+                        <th className="py-2 font-semibold text-text-primary">What's Happening</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 pr-4 align-top">Over-reliance on pre-entry controls</td>
+                        <td className="py-3">Endorsement gates trustworthy men, prevents early liquidity, under-utilizes behavioral trust signals</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 pr-4 align-top">Metro-first expansion</td>
+                        <td className="py-3">Events and acquisition focus on major metros; Tier-2 cities feel unseeded</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 pr-4 align-top">Monetization before value</td>
+                        <td className="py-3">Subscription messaging appears during waitlist - "pay before access" perception</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 pr-4 align-top">Narrow definition of trust</td>
+                        <td className="py-3">Trust = endorsement by women; excludes good actors without female social graphs</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Solution</h2>
+
+            <div className="space-y-8">
+              {/* Phase 1 */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Phase 1: Reduce Friction & Establish Transparency</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Recommendation</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What it does</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Verification SLAs</td>
+                        <td className="py-3 px-4">Provide realistic timeframe (48-72 hours) with progress tracker - reduces anxiety</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Limited discovery pre-endorsement</td>
+                        <td className="py-3 px-4">Show verified men a small curated pool to demonstrate value before locking access</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Remove paywall during waitlist</td>
+                        <td className="py-3 px-4">Monetization should appear post-approval - prevents perception of exploitation</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 align-top font-medium">City-level liquidity dashboard</td>
+                        <td className="py-3 px-4">Track active pools per city to calibrate activation strategy</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Phase 2 */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Phase 2: Improve Match Quality & Marketplace Balance</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Recommendation</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What it does</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Behavior-based trust model</td>
+                        <td className="py-3 px-4">Phase out endorsement as sole entry criteria; use chat behavior, verification score, profile completeness, low-report history</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Tier-2 city seeding programs</td>
+                        <td className="py-3 px-4">Partner with universities, gyms, co-working spaces; launch curated meetups; relax waitlist when minimum female cohort is met</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 align-top font-medium">"Local Mode" vs "Metro Mode"</td>
+                        <td className="py-3 px-4">Default to local-first matching; optional opt-in for metro discovery</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Phase 3 */}
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-4">Phase 3: Strategic Differentiators</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-xl border border-slate-200">
+                    <thead>
+                      <tr className="border-b border-slate-300">
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">Recommendation</th>
+                        <th className="py-3 px-4 text-left font-semibold text-text-primary">What it does</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Women-curated social circles</td>
+                        <td className="py-3 px-4">Workplace, alumni, hobby-based circles instead of one-to-one endorsements - reduces awkwardness</td>
+                      </tr>
+                      <tr className="border-b border-slate-200">
+                        <td className="py-3 px-4 align-top font-medium">Reputation badges for men</td>
+                        <td className="py-3 px-4">"Respectful Communicator," "Highly Trusted," "Verified & Safe" - showcases behavioral credibility, not social capital</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 align-top font-medium">Narrative shift</td>
+                        <td className="py-3 px-4">Reframe from "exclusive club" to "balanced safety" - emphasize that respectful men are welcome</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Impact</h2>
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full bg-slate-50 rounded-xl border border-slate-200">
+                <thead>
+                  <tr className="border-b border-slate-300">
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Problem</th>
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Solution</th>
+                    <th className="py-3 px-4 text-left font-semibold text-text-primary">Expected Outcome</th>
+                  </tr>
+                </thead>
+                <tbody className="text-text-secondary">
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top">Men stuck in indefinite waitlist</td>
+                    <td className="py-3 px-4 align-top">Verification SLAs + behavior-based trust</td>
+                    <td className="py-3 px-4 align-top">Higher male activation rate, reduced early churn</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top">Thin local pools in Tier-2</td>
+                    <td className="py-3 px-4 align-top">City seeding + local mode</td>
+                    <td className="py-3 px-4 align-top">Improved local liquidity, stronger IRL value proposition</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="py-3 px-4 align-top">Paywall before value</td>
+                    <td className="py-3 px-4 align-top">Monetization post-approval</td>
+                    <td className="py-3 px-4 align-top">Better conversion, reduced "pay to play" perception</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 align-top">Narrow trust definition</td>
+                    <td className="py-3 px-4 align-top">Behavior-based badges + social circles</td>
+                    <td className="py-3 px-4 align-top">More inclusive ecosystem, broader male participation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-lg text-text-secondary leading-relaxed">
+              <span className="font-semibold text-text-primary">Strategic alignment:</span> These recommendations don't abandon the women-first philosophy - they refine it. Women still lead. Safety remains core. But trust becomes something you earn through behavior, not something you inherit through social connections.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Learned */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">What I Learned</h2>
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Marketplace balance is everything.</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  A dating app is a two-sided marketplace. If one side faces structural barriers (men stuck in waitlist limbo), the other side suffers too (women see thin, distant pools). Safety and liquidity must be balanced.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Monetization must follow value.</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Showing subscription options to waitlisted users who haven't experienced the product creates resentment, not conversion. Value first, paywall later.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Trust can be earned, not just vouched.</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Endorsement is one signal of trust. But behavioral data - respectful chat patterns, low report rates, profile completeness - can be equally powerful and more inclusive.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">IRL-first breaks without local density.</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Elevn's core promise is offline connections. But when matches are 200km away, that promise feels hollow. Tier-2 seeding isn't optional - it's existential.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl border border-slate-200">
+                <h3 className="text-xl font-bold text-accent mb-3">Perception shapes reality.</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Online sentiment calls Elevn "anti-men" or "exclusive." Whether that's fair or not, it's a brand problem. A narrative shift toward "balanced safety for both genders" could unlock growth without compromising the mission.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
