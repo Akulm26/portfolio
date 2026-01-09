@@ -873,7 +873,7 @@ const CerebroCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
         <div className="container mx-auto px-6 flex justify-between items-center">
@@ -887,14 +887,228 @@ const CerebroCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </div>
       </nav>
 
-      {/* Centered Title */}
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
-            Cerebro AI <span className="text-accent">Case Study</span>
-          </h1>
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-text-primary mb-4">
+              Cerebro AI
+            </h1>
+            <p className="text-2xl md:text-3xl text-text-secondary mb-6">Personal Knowledge Operating System</p>
+            <div className="flex flex-wrap justify-center gap-3 mt-8">
+              {['RAG', 'Semantic Search', 'Vector Embeddings', 'OCR', 'pgvector', 'OpenAI', 'Gemini'].map((tag) => (
+                <span key={tag} className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-bold">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Pain Point */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Pain Point</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p className="font-semibold text-text-primary">I kept losing things I'd already read.</p>
+              <p>A PDF from a course I took. A screenshot of something useful. Notes I made three months ago. I knew I had the information somewhere - but I couldn't find it. I'd try different keywords, open five apps, scroll through folders, and still come up empty.</p>
+              <p>The worst part? This happened constantly. Not because I wasn't organized, but because search only works if you remember the exact words you used. And I never did.</p>
+              <p className="font-semibold text-text-primary">That's when I realized: the problem isn't storing information. It's getting it back.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Approach</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>I started by asking a simple question: <span className="font-semibold text-text-primary">Why does search fail me?</span></p>
+              <p>The answer was clear - traditional search matches keywords, not meaning. If I saved a note about "improving retention" but searched for "keeping users engaged," I'd get nothing. Even though they mean the same thing.</p>
+              <p>So I needed a system that understands concepts, not just words.</p>
+              <p>That led me to <span className="font-semibold text-text-primary">RAG (Retrieval-Augmented Generation)</span> - an architecture that converts documents into semantic embeddings, searches by meaning, and generates answers grounded strictly in my own files. No hallucinations. No guessing.</p>
+              <p>I scoped v1 tightly: ingest any document (PDFs, images, screenshots), chunk it intelligently, embed it, and let me ask questions in plain English. The system would do the remembering. I wouldn't have to.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Solution</h2>
+
+            <h3 className="text-2xl font-bold text-text-primary mb-6">Architecture: 4-stage RAG pipeline</h3>
+
+            {/* Table */}
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+                <thead>
+                  <tr className="bg-slate-100">
+                    <th className="px-6 py-4 text-left font-bold text-text-primary">Stage</th>
+                    <th className="px-6 py-4 text-left font-bold text-text-primary">What it does</th>
+                    <th className="px-6 py-4 text-left font-bold text-text-primary">Tech</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-slate-100">
+                    <td className="px-6 py-4 font-semibold text-text-primary">Ingestion</td>
+                    <td className="px-6 py-4 text-text-secondary">Parses PDFs, DOCX, images via OCR; extracts text and metadata</td>
+                    <td className="px-6 py-4 text-text-secondary">Supabase Edge Functions (Deno)</td>
+                  </tr>
+                  <tr className="border-t border-slate-100 bg-slate-50/50">
+                    <td className="px-6 py-4 font-semibold text-text-primary">Chunking</td>
+                    <td className="px-6 py-4 text-text-secondary">Splits into semantic segments (150 words, 30-word overlap)</td>
+                    <td className="px-6 py-4 text-text-secondary">Custom chunking logic</td>
+                  </tr>
+                  <tr className="border-t border-slate-100">
+                    <td className="px-6 py-4 font-semibold text-text-primary">Embedding</td>
+                    <td className="px-6 py-4 text-text-secondary">Converts chunks to 1536-dimension vectors</td>
+                    <td className="px-6 py-4 text-text-secondary">text-embedding-3-small (OpenAI)</td>
+                  </tr>
+                  <tr className="border-t border-slate-100 bg-slate-50/50">
+                    <td className="px-6 py-4 font-semibold text-text-primary">Retrieval</td>
+                    <td className="px-6 py-4 text-text-secondary">Cosine similarity search → LLM generates cited answer</td>
+                    <td className="px-6 py-4 text-text-secondary">pgvector + Gemini 2.5 Flash</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-2xl font-bold text-text-primary mb-6">Stack:</h3>
+            <ul className="space-y-3 text-lg text-text-secondary leading-relaxed list-none">
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span><strong className="text-text-primary">Frontend:</strong> React, TypeScript, Tailwind, shadcn/ui</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span><strong className="text-text-primary">Backend:</strong> Supabase (Auth, Postgres, Edge Functions)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span><strong className="text-text-primary">Vector DB:</strong> pgvector with HNSW indexing</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span><strong className="text-text-primary">Embeddings:</strong> OpenAI text-embedding-3-small</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span><strong className="text-text-primary">LLM:</strong> Google Gemini 2.5 Flash (via Lovable AI Gateway)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Impact</h2>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-2">Answer relevance</div>
+                <div className="text-sm font-bold text-text-primary mb-2">Target: ≥85%</div>
+                <p className="text-sm text-text-secondary">8 out of 10 answers directly address what the user asked</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-2">Citation accuracy</div>
+                <div className="text-sm font-bold text-text-primary mb-2">Target: 100%</div>
+                <p className="text-sm text-text-secondary">Every answer points back to the exact source - no made-up information</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-2">Ingestion time</div>
+                <div className="text-sm font-bold text-text-primary mb-2">Target: &lt;15 seconds</div>
+                <p className="text-sm text-text-secondary">Upload a document, and it's searchable almost immediately</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-2">Query-to-answer</div>
+                <div className="text-sm font-bold text-text-primary mb-2">Target: &lt;3 seconds</div>
+                <p className="text-sm text-text-secondary">Ask a question, get an answer before you lose your train of thought</p>
+              </div>
+            </div>
+
+            <h3 className="text-2xl font-bold text-text-primary mb-6">Key design decisions:</h3>
+            <ul className="space-y-3 text-lg text-text-secondary leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span>Every answer shows its source (builds trust)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span>No manual tagging or folder management required</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span>AI-powered folder classification on upload</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent mt-1">•</span>
+                <span>Handles "unsearchable" formats like screenshots and scanned PDFs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Learned */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">What I Learned</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold mb-3">Chunking quality determines retrieval quality.</h3>
+                <p className="text-slate-300 leading-relaxed">Chunking is how you break a long document into smaller pieces before the system can search through it. If you cut in the wrong places - say, mid-sentence or mid-idea - the system retrieves fragments that don't make sense. I landed on 150-word chunks with 30-word overlap, meaning each chunk shares a little context with the next. This helped the system return complete, relevant answers instead of confusing snippets.</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Transparency builds trust.</h3>
+                <p className="text-slate-300 leading-relaxed">It's not enough to give users an answer. They need to see where that answer came from. Showing the source document and the exact passage made the system feel reliable - not like a black box making things up.</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Zero-maintenance is a feature.</h3>
+                <p className="text-slate-300 leading-relaxed">If a system requires users to tag, organize, or manually manage their files, most people will abandon it. The whole point was to remove that burden. The system should do the remembering - not the user.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
+            <p className="text-text-secondary mb-8">Let's discuss how I can help with your product challenges.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2">
+                <Mail size={20} />
+                <span>Get in Touch</span>
+              </a>
+              <button onClick={onBack} className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all">
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
