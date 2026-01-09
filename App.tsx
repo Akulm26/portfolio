@@ -2182,14 +2182,388 @@ const AppleStockCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) =
         </div>
       </nav>
 
-      {/* Centered Title */}
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
-            Apple Stock Prediction <span className="text-accent">Case Study</span>
-          </h1>
+      {/* Hero Section */}
+      <section className="pt-20 pb-8">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight mb-6">
+              Apple Stock Dashboard <span className="text-accent">Case Study</span>
+            </h1>
+            <div className="mb-6">
+              <a
+                href="https://aksum.shinyapps.io/appleenahnced/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-accent/30"
+              >
+                <ExternalLink size={20} />
+                <span>View Live Dashboard</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Apple Stock Dashboard</h2>
+              <p className="text-xl text-accent font-semibold mb-2">Real-Time Stock Analysis & Price Forecasting</p>
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">R Shiny</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Prophet</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Quantmod</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Time Series</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Plotly</span>
+                <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Yahoo Finance API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Point */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Pain Point</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p className="text-2xl font-bold text-text-primary">
+                Tracking stock performance shouldn't require switching between five different tools.
+              </p>
+              <p>
+                I wanted to monitor Apple's stock - see the current price, understand recent trends, and get a sense of where it might be heading. But most solutions were either too basic (just a price ticker) or too complex (Bloomberg terminals with a steep learning curve and expensive subscriptions).
+              </p>
+              <p>
+                Retail investors and finance enthusiasts face the same friction: <span className="font-semibold text-text-primary">scattered data across multiple sources</span>, no easy way to visualize historical trends alongside predictions, and no single dashboard that brings it all together in a clean, interactive format.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Approach</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p>
+                I asked: <span className="font-semibold text-text-primary">What would a self-contained stock analysis tool look like?</span>
+              </p>
+              <p className="font-semibold text-text-primary">The answer had four parts:</p>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Real-time data</h3>
+                <p className="text-sm text-text-secondary">Pull live stock prices automatically, not manually</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Historical visualization</h3>
+                <p className="text-sm text-text-secondary">See trends over customizable date ranges</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Technical indicators</h3>
+                <p className="text-sm text-text-secondary">Moving averages and candlestick charts for pattern recognition</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-accent mb-2">Forecasting</h3>
+                <p className="text-sm text-text-secondary">Predict future prices using time series modeling</p>
+              </div>
+            </div>
+
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>
+                I chose <span className="font-semibold text-accent">R Shiny</span> for the dashboard framework because it allows rapid prototyping of interactive data apps. For forecasting, I used <span className="font-semibold text-accent">Facebook's Prophet library</span> - designed specifically for business time series with daily seasonality patterns, which fits stock data well.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Solution</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p className="text-xl font-bold text-text-primary">Architecture: Real-time data pipeline with interactive visualization</p>
+            </div>
+
+            {/* Architecture Table */}
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-8">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-slate-50">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-text-primary border-b border-slate-200">Component</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-text-primary border-b border-slate-200">What it does</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-text-primary border-b border-slate-200">Tech</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-100">
+                      <td className="px-6 py-4 text-sm font-semibold text-text-primary">Data Ingestion</td>
+                      <td className="px-6 py-4 text-sm text-text-secondary">Fetches live AAPL stock data from Yahoo Finance</td>
+                      <td className="px-6 py-4 text-sm text-accent">quantmod package</td>
+                    </tr>
+                    <tr className="border-b border-slate-100">
+                      <td className="px-6 py-4 text-sm font-semibold text-text-primary">Auto-Refresh</td>
+                      <td className="px-6 py-4 text-sm text-text-secondary">Updates data every 60 seconds automatically</td>
+                      <td className="px-6 py-4 text-sm text-accent">Shiny reactive polling</td>
+                    </tr>
+                    <tr className="border-b border-slate-100">
+                      <td className="px-6 py-4 text-sm font-semibold text-text-primary">Visualization</td>
+                      <td className="px-6 py-4 text-sm text-text-secondary">Interactive line charts, candlestick charts, data tables</td>
+                      <td className="px-6 py-4 text-sm text-accent">Plotly, DT</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 text-sm font-semibold text-text-primary">Forecasting</td>
+                      <td className="px-6 py-4 text-sm text-text-secondary">30-day price prediction with confidence intervals</td>
+                      <td className="px-6 py-4 text-sm text-accent">Prophet (time series ML)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Dashboard Features */}
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-8">
+              <p className="font-semibold text-text-primary">Dashboard Features:</p>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Value Boxes</h3>
+                    <p className="text-sm text-text-secondary">Current price, daily change ($), percent change (%) - color-coded green/red</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Stock Price Chart</h3>
+                    <p className="text-sm text-text-secondary">Historical closing prices with adjustable moving average overlay</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Candlestick Chart</h3>
+                    <p className="text-sm text-text-secondary">Open/High/Low/Close visualization for technical analysis</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Price Table</h3>
+                    <p className="text-sm text-text-secondary">Sortable, searchable table of all historical data</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Forecast Plot</h3>
+                    <p className="text-sm text-text-secondary">30-day ahead prediction with actual vs. forecasted comparison</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Earnings Analysis</h3>
+                    <p className="text-sm text-text-secondary">5-year earnings trend (2020-2024) on separate tab</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-accent mb-2">Company Info</h3>
+                    <p className="text-sm text-text-secondary">Key stats sidebar: Market Cap ($2.48T), P/E Ratio (30.50), EPS ($5.61), Dividend Yield (0.55%)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 className="text-xl font-bold text-text-primary mb-4">Stack:</h3>
+              <ul className="space-y-3 text-text-secondary">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent font-bold">•</span>
+                  <span><span className="font-semibold text-text-primary">Framework:</span> R Shiny with shinydashboard</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent font-bold">•</span>
+                  <span><span className="font-semibold text-text-primary">Data Source:</span> Yahoo Finance via quantmod</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent font-bold">•</span>
+                  <span><span className="font-semibold text-text-primary">Visualization:</span> Plotly for interactive charts, DT for tables</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent font-bold">•</span>
+                  <span><span className="font-semibold text-text-primary">Forecasting:</span> Facebook Prophet with yearly + daily seasonality</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent font-bold">•</span>
+                  <span><span className="font-semibold text-text-primary">Deployment:</span> Shiny Server (manifest.json configured for deployment)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">Impact</h2>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Metric</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Data Freshness</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-accent">Auto-updates every 60 seconds</div>
+                </div>
+                <p className="text-sm text-text-secondary">Users always see current prices without manual refresh</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Outcome</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Date Flexibility</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-accent">Custom date range selector</div>
+                </div>
+                <p className="text-sm text-text-secondary">Analyze any period from 2022 to present</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Feature</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Technical Analysis</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-accent">Moving average slider (1-30 days)</div>
+                </div>
+                <p className="text-sm text-text-secondary">Users can adjust indicators to their trading style</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Capability</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Forecast Horizon</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-accent">30-day predictions</div>
+                </div>
+                <p className="text-sm text-text-secondary">Helps users anticipate near-term price movements</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="text-sm font-bold text-accent mb-2">Experience</div>
+                <div className="text-2xl font-bold text-text-primary mb-3">Interactivity</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="text-lg font-bold text-accent">Hover tooltips, zoom, pan</div>
+                </div>
+                <p className="text-sm text-text-secondary">Explore data without leaving the dashboard</p>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+              <p className="text-sm font-semibold text-text-primary mb-2">Key design decisions:</p>
+              <ul className="space-y-2 text-sm text-text-secondary">
+                <li>• Single-page dashboard with everything visible - no hunting through tabs</li>
+                <li>• Color-coded value boxes (green = up, red = down) for instant sentiment</li>
+                <li>• Prophet model captures both yearly seasonality and daily patterns for more accurate forecasts</li>
+                <li>• Responsive auto-refresh keeps data current without user intervention</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Learned */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">What I Learned</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold mb-3">Real-time data changes the user experience.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  A dashboard that updates itself every 60 seconds feels alive. Users trust it more because they know they're seeing current information - not stale data from hours ago.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Prophet handles stock seasonality well.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Stock prices have patterns - weekly trading cycles, yearly earnings seasons. Prophet's built-in seasonality modeling captured these without manual feature engineering.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Interactivity beats static charts.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Plotly's hover tooltips, zoom, and pan features let users explore data on their own terms. A candlestick chart you can zoom into is far more useful than a static image.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Context matters as much as data.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Adding company info (Market Cap, P/E, EPS) in the sidebar gives users the fundamentals alongside the price action. Numbers without context are just noise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
+            <p className="text-text-secondary mb-8">Let's discuss how I can help with your data visualization and analytics challenges.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://aksum.shinyapps.io/appleenahnced/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2"
+              >
+                <ExternalLink size={20} />
+                <span>View Live Dashboard</span>
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all flex items-center gap-2">
+                <Mail size={20} />
+                <span>Get in Touch</span>
+              </a>
+              <button onClick={onBack} className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all">
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
