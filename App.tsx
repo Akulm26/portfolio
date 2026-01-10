@@ -805,7 +805,7 @@ const About: React.FC = () => {
               <p className="text-text-secondary leading-relaxed font-light text-xl md:text-2xl">My journey began in the world of high-stakes data science, where I learned that numbers only matter if they move people. Today, I leverage that technical foundation to build AI products that feel human.</p>
               <p className="text-text-secondary leading-relaxed font-light text-xl md:text-2xl">Having transitioned from a technical contributor to product management, I specialize in translating complex algorithmic capabilities into intuitive daily products.</p>
             </div>
-            <div className="pt-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-slate-100">
+            <div className="pt-12 border-t border-slate-100">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-accent">
                   <GraduationCap size={16} />
@@ -817,15 +817,6 @@ const About: React.FC = () => {
                   <div className="inline-block mt-2 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold text-text-secondary">
                     PMP Certified
                   </div>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-accent">
-                  <Globe size={16} />
-                  <p className="text-[10px] font-bold uppercase tracking-widest">Global Base</p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-text-primary font-bold text-lg">Available for global projects</p>
                 </div>
               </div>
             </div>
