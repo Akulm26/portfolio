@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, TrendingUp, TrendingDown, MapPin, Calendar, Briefcase } from 'lucide-react';
+import { ChevronDown, TrendingUp, TrendingDown, MapPin, Calendar, Briefcase, ArrowLeft } from 'lucide-react';
 import { WorkExperience as WorkExperienceType, WorkMetric, WorkStory } from './types';
 import { WORK_EXPERIENCES } from './constants';
 
@@ -238,7 +238,11 @@ const ExperienceCard: React.FC<{ experience: WorkExperienceType; index: number }
 };
 
 // Main Work Experience Section
-const WorkExperience: React.FC = () => {
+interface WorkExperienceProps {
+  onBack?: () => void;
+}
+
+const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
   return (
     <section id="work" className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
       {/* Background Gradient Effects */}
@@ -247,6 +251,21 @@ const WorkExperience: React.FC = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Back Button */}
+        {onBack && (
+          <div className="mb-12">
+            <button
+              onClick={onBack}
+              className="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-all duration-300"
+            >
+              <div className="w-10 h-10 rounded-full bg-slate-800/50 border border-slate-700/50 flex items-center justify-center group-hover:bg-slate-700/50 group-hover:border-blue-500/50 transition-all duration-300">
+                <ArrowLeft className="w-5 h-5" />
+              </div>
+              <span className="font-medium">Back to Portfolio</span>
+            </button>
+          </div>
+        )}
+
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
           <div className="inline-block mb-4">

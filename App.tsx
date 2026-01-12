@@ -3450,23 +3450,8 @@ const WorkPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      {/* Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <button onClick={onBack} className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors">
-            <ArrowRight className="rotate-180" size={18} />
-            <span className="font-medium">Back to Portfolio</span>
-          </button>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20">
-            Get in Touch
-          </a>
-        </div>
-      </nav>
-
-      {/* Work Experience Section */}
-      <div className="pt-20">
-        <WorkExperience />
-      </div>
+      {/* Work Experience Section with Back Button */}
+      <WorkExperience onBack={onBack} />
     </div>
   );
 };
