@@ -26,3 +26,31 @@ export interface Principle {
   title: string;
   description: string;
 }
+
+export interface WorkMetric {
+  value: string;
+  label: string;
+  trend?: 'up' | 'down';
+}
+
+export interface WorkStory {
+  title: string;
+  subtitle: string;
+  resumeBullet: string;
+  star: {
+    situation: string;
+    task: string;
+    action: string;
+    result: string;
+  };
+}
+
+export interface WorkExperience {
+  company: string;
+  role: string;
+  location: string;
+  dates: string;
+  context: string;
+  metrics: WorkMetric[];
+  stories: WorkStory[];
+}

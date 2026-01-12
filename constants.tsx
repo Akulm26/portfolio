@@ -1,4 +1,4 @@
-import { Project, Capability, Step, Principle } from './types';
+import { Project, Capability, Step, Principle, WorkExperience } from './types';
 
 export interface EnhancedProject extends Project {
   metricLabel?: string;
@@ -333,3 +333,187 @@ export const CASE_STUDIES: Record<string, CaseStudyContent> = {
     ]
   }
 };
+
+export const WORK_EXPERIENCES: WorkExperience[] = [
+  {
+    company: 'Wareline Technologies',
+    role: 'Product Manager',
+    location: 'Chandigarh (Remote)',
+    dates: 'March 2024 – September 2025',
+    context: 'Led development of an AI-powered news application with personalized recommendations, LLM summarization, and engagement optimization.',
+    metrics: [
+      { value: '20%', label: 'Content Relevance', trend: 'up' },
+      { value: '2.5x', label: 'Daily App Opens', trend: 'up' },
+      { value: '50+', label: 'News Sources' },
+      { value: '7', label: 'Person Team Led' }
+    ],
+    stories: [
+      {
+        title: 'Recommendation Algorithm A/B Testing',
+        subtitle: 'Led experimentation across 300 users to find the optimal personalization approach',
+        resumeBullet: 'Improved content relevance 20% by leading A/B tests of 3 recommendation algorithms (collaborative, content-based, hybrid) across 300 internal users, increasing session duration 15% (4.1→4.7 min) and articles read per session 12%',
+        star: {
+          situation: 'At Wareline Technologies, we were building an AI-powered news application designed to deliver highly personalized news feeds. During internal beta testing with 300 users, we noticed a critical problem: despite having a visually clean interface, users weren\'t spending much time reading. Average session duration was stuck at just 4.1 minutes, and internal feedback consistently mentioned that the feed felt "generic" or "repetitive." The product had strong technical foundations, but weak personalization — users simply weren\'t getting articles that matched their interests.',
+          task: 'As the Product Manager leading this initiative, my objective was to identify which recommendation algorithm would actually improve content relevance — and prove it with real engagement data, not just algorithm accuracy scores. I set a success target of +15% increase in average session duration within the internal evaluation phase.',
+          action: 'I collaborated with data science and engineering to design a controlled A/B testing environment comparing three recommendation approaches: collaborative filtering (based on similar users\' reading patterns), content-based filtering (based on article metadata and topics), and a hybrid ranking model (weighted combination of both). We defined a "content relevance score" combining CTR, scroll depth, article completion rate, and time spent per article. I created three user cohorts of approximately 100 internal beta users each, exposing each group to one algorithmic version. We used Mixpanel and Firebase events (article_opened, session_time, feed_refresh) to track engagement, and collected qualitative feedback through in-app surveys asking "How relevant did today\'s articles feel?" on a 1-5 scale. After four weeks of testing, I analyzed the results with the data team and recommended the winning algorithm for production.',
+          result: 'The hybrid recommendation model won decisively. Content relevance improved by 20% (based on CTR + dwell-time composite). Average session duration increased by 15%, from 4.1 to 4.7 minutes. Articles read per user rose by 12%. The hybrid model became the default recommendation system in production, forming the backbone of the app\'s personalization engine.'
+        }
+      },
+      {
+        title: 'AI News Platform Architecture',
+        subtitle: 'Designed end-to-end architecture for content ingestion, AI summarization, and personalization',
+        resumeBullet: 'Built AI-powered news platform by defining RSS feed parsing architecture supporting 50+ sources, integrating LLM summarization, and designing personalized recommendation system',
+        star: {
+          situation: 'Wareline Technologies was tasked with building an AI-powered news application from scratch. The vision was ambitious: aggregate content from dozens of news sources, use AI to summarize articles intelligently, and deliver personalized feeds that adapted to each user\'s interests. However, there was no existing infrastructure — we needed to define the entire technical architecture from content ingestion to user-facing delivery.',
+          task: 'As Product Manager, my responsibility was to define the product architecture: how we\'d ingest content from multiple sources, process it with AI for categorization and summarization, and serve personalized recommendations at scale. I needed to translate business requirements into technical specifications that the engineering team could execute.',
+          action: 'I defined the RSS feed parsing architecture to support 50+ news sources across multiple categories (tech, business, sports, entertainment, etc.). I worked with engineering to integrate LLM-based article summarization, allowing users to get quick digests without reading full articles — this reduced average reading time by 40% for users who engaged with summaries. I designed the personalized recommendation system architecture, ultimately settling on a hybrid approach combining collaborative and content-based filtering after extensive research into what major news apps (Google News, SmartNews, Inshorts) were doing. I created detailed PRDs and worked closely with the 7-person engineering team through the full development lifecycle, from ideation to launch.',
+          result: 'We launched a fully functional AI news platform with automated content aggregation from 50+ sources, LLM-powered summarization that reduced reading time by 40%, and personalized feeds powered by our hybrid recommendation engine. This core architecture enabled all subsequent engagement experiments and feature iterations, becoming the foundation for Wareline\'s news product offering.'
+        }
+      },
+      {
+        title: 'Personalized Breaking News Alerts',
+        subtitle: 'Implemented smart notification system balancing relevance with frequency',
+        resumeBullet: 'Increased daily app opens 2.5x (2→5 per day) by implementing personalized breaking news alerts triggered by user topic preferences and event detection',
+        star: {
+          situation: 'After launching the AI news app, we noticed a retention challenge: users were only opening the app twice per day on average. While session engagement was improving thanks to our recommendation algorithm work, we were missing opportunities to re-engage users throughout the day when news they cared about was breaking. Push notifications existed but were generic and often ignored.',
+          task: 'My objective was to increase daily app opens by implementing smart, personalized notifications that felt genuinely helpful rather than spammy. The challenge was finding the right balance — we needed to notify users about relevant breaking news without overwhelming them or causing notification fatigue.',
+          action: 'I designed a notification system triggered by user topic preferences (tech, sports, finance, politics, etc.) combined with event detection logic to identify genuinely breaking news worth alerting. We built topic-preference tracking based on user reading behavior and explicit selections during onboarding. I designed notification copy templates and implemented frequency caps to prevent fatigue — no more than 5 notifications per day, with smart suppression during nighttime hours. We A/B tested different notification strategies: generic alerts vs. personalized alerts vs. a control group with no breaking news notifications.',
+          result: 'Daily app opens increased 2.5x, from 2 to 5 per day. Users who received personalized alerts showed significantly higher engagement — they were returning throughout the day when stories matched their interests. Notification opt-out rates remained low (under 8%), indicating we\'d found the right balance between relevance and frequency. This feature became a key differentiator for user retention.'
+        }
+      }
+    ]
+  },
+  {
+    company: 'Seacan Overseas',
+    role: 'Founder\'s Office (Strategy & Operations)',
+    location: 'Chandigarh',
+    dates: 'June 2023 – November 2023',
+    context: 'Early-stage immigration and study abroad startup. Drove go-to-market strategy, built analytics infrastructure, and optimized visa processing workflows.',
+    metrics: [
+      { value: '20%', label: 'Revenue (QoQ)', trend: 'up' },
+      { value: '15%', label: 'Processing Time', trend: 'down' },
+      { value: '10+', label: 'University Partnerships' },
+      { value: '3.9 → 4.8', label: 'CSAT' }
+    ],
+    stories: [
+      {
+        title: 'Market Positioning & Data-Driven Growth Dashboard',
+        subtitle: 'Established differentiated positioning and built analytics infrastructure from scratch',
+        resumeBullet: 'Drove 20% revenue growth by establishing differentiated go-to-market positioning for target customer segments through competitive and user research.',
+        star: {
+          situation: 'When I joined Seacan Overseas, it was an early-stage immigration startup with no clear market positioning or data visibility. Leads came through word-of-mouth, but conversions and pricing were inconsistent. The founders had no dashboard to track revenue, leads, or service performance — they were essentially flying blind. Competitors in the immigration consulting space were winning on price, but Seacan had no clear differentiator.',
+          task: 'As part of the Founder\'s Office, I was tasked with two objectives: (1) Define Seacan\'s unique market positioning through research, and (2) Build a measurement system to monitor growth and client funnel. Our target was 20% revenue growth within one quarter.',
+          action: 'For market research and positioning, I analyzed 15+ competitors and conducted interviews with 25 prospective clients. A key insight emerged: Tier-2 city users valued transparency over discounts — they wanted to understand the process, not just get the cheapest price. I re-positioned Seacan as "an immigration partner offering transparent, step-by-step guidance." For the marketing funnel, I designed a CRM-based pipeline (Inquiry → Consultation → Converted) and tested two ad messages: "Apply Now" vs. "Transparent Timelines." The trust-based messaging lifted conversion by 24%. For analytics, I built a dashboard tracking lead source, country interest, funnel stage, consultant name, package type, payment received, processing time, and client satisfaction. I calculated Average Ticket Size (Total Revenue ÷ Converted Clients) to measure per-client yield, and added CAC and Cost-per-Lead metrics for channel ROI visibility. We reviewed dashboards weekly with founders and trained counselors on top client queries.',
+          result: 'Revenue increased 20.6% quarter-over-quarter, driven by conversion rate improvement from 18% to 26%. Average Ticket Size rose 12%, showing better upsells and pricing discipline. Client satisfaction improved 25%, and processing time decreased 15%. Seacan secured its Tier-2 market position and achieved 2x lead volume growth.'
+        }
+      },
+      {
+        title: 'Visa Process Optimization & Service Delivery',
+        subtitle: 'Built university partnerships and standardized visa workflows',
+        resumeBullet: 'Improved service delivery and CSAT by 15% through visa process optimization and input on expansion strategy.',
+        star: {
+          situation: 'Seacan relied on walk-ins and third-party agents, which limited authenticity and slowed offer-letter and visa timelines. There was no direct relationship with universities, and operationally, visa files were handled manually — each counselor used their own process, creating delays and inconsistent client experiences. Average visa processing time was 27 days, and client satisfaction was 3.9/5.',
+          task: 'My goal was to strategically expand Seacan\'s footprint across key destinations (Singapore, Canada, Cyprus, Poland, Finland), build direct university partnerships, and optimize visa workflows to improve service delivery by at least 15%.',
+          action: 'For business expansion, I conducted market mapping of 30+ global universities to identify those open to official agent partnerships. I designed partner acquisition collateral (pitch deck, metrics dashboard, student success data) and personally negotiated 5 university MoUs within one month. These partnerships enabled faster student verification, 20% reduction in offer-letter turnaround, and higher student trust. For workflow optimization, I audited the visa pipeline end-to-end and mapped redundancies. I created a five-stage standardized process (Document Collection → Verification → Submission → Embassy Response → Client Delivery) with a color-coded Google Sheet tracker showing defined SLAs and auto-status visibility. I introduced on-time submission KPIs for counselors, daily huddles for bottleneck resolution, and client-facing status updates that cut inquiry calls by 30%.',
+          result: 'Formed 10+ direct university partnerships, boosting lead quality and credibility by 40%. Visa processing time reduced by 15% (27 → 23 days). Client satisfaction rose from 3.9 to 4.8/5. On-time submission rate improved by 18 percentage points (69% → 87%). Seacan earned recognition as "Best Europe Visa Consultants in Chandigarh," and the partnership + workflow model became the company\'s scalable blueprint for expansion.'
+        }
+      }
+    ]
+  },
+  {
+    company: 'Apple Media Products',
+    role: 'Business Analyst (Contract)',
+    location: 'Washington, DC & Cupertino, CA',
+    dates: 'November 2021 – May 2023',
+    context: 'Supported Apple TV+, Apple Music, and Apple Arcade with KPI forecasting, content analytics, and growth insights across 100M+ users globally.',
+    metrics: [
+      { value: '20%', label: 'Forecast Error', trend: 'down' },
+      { value: '30M+', label: 'Sessions Analyzed' },
+      { value: '5', label: 'Content Launches Influenced' },
+      { value: '15+', label: 'Regions Covered' }
+    ],
+    stories: [
+      {
+        title: 'KPI Forecasting Redesign Using DeepAR',
+        subtitle: 'Built Apple\'s first country-level forecasting system using neural time-series modeling',
+        resumeBullet: 'Led KPI forecasting redesign (eligibility, redemption, signups) for Apple TV+, Music and Arcade, reducing error by 20% and enabling country-level marketing planning across 15+ regions.',
+        star: {
+          situation: 'At Apple Media Products, leadership relied on high-level regional forecasts for key performance indicators — eligibility, redemption, and organic signups — to plan marketing budgets and promotional campaigns. However, those forecasts were aggregated at the regional level and didn\'t reflect country-specific patterns or product-level seasonality (student plan spikes in September, local holidays in India or Japan). As a result, actual performance often deviated by 25-30% from forecasts, creating planning inefficiencies and reduced visibility for local teams.',
+          task: 'As the Business Analyst for this project, my mandate was to build Apple\'s first country- and KPI-level forecasting model, leverage DeepAR (a neural time-series forecasting method) to capture non-linear seasonal behavior and campaign effects, and improve KPI tracking accuracy by at least 20%.',
+          action: 'I gathered two years of historical KPI data across 15 countries and three product lines, segmenting inputs by KPI, campaign type, and product (TV+, Music, Arcade). I established baselines for forecast error (MAPE ~25%) to quantify improvement. I implemented DeepAR, Amazon\'s probabilistic forecasting algorithm, to model both short-term seasonality and cross-country dependencies. The model learned from all time-series simultaneously, improving generalization for smaller countries with sparse data. I automated model training and forecast generation through Python (MXNet + GluonTS stack). I ran backtesting across 6 quarters and compared forecast variance to prior regional-level aggregates. I collaborated with marketing and finance to validate forecasts against actual campaign data, documented the methodology, and rolled out to 4 regional analytics pods.',
+          result: 'Built Apple\'s first DeepAR-based country- and KPI-level forecasting system, covering 3 KPIs × 15 countries × 3 product lines. Reduced forecast variance by 20%, improving KPI tracking accuracy for eligibility, redemption, and organic signups. Enhanced local planning precision for regional marketing and partnership teams. The model was adopted as the standard forecasting pipeline within Apple Media Products\' global analytics framework.'
+        }
+      },
+      {
+        title: 'Apple TV+ Content Strategy & Audience Insights',
+        subtitle: 'Analyzed 30M+ viewing sessions to guide content prioritization and regional launches',
+        resumeBullet: 'Influenced 5 major content launches by analyzing viewer engagement across 20+ markets to identify 10+ top performing TV+ titles and inform content prioritization.',
+        star: {
+          situation: 'In 2022, Apple TV+ was scaling rapidly across 20+ international markets. Leadership needed sharper, country-specific visibility into which titles were resonating and where engagement was growing fastest. Existing analytics were global and aggregated, making it difficult to tell a market-level performance story that could guide launch priorities and localization decisions.',
+          task: 'My mandate was to build a consistent insight framework that turned raw engagement data into strategic recommendations for Apple TV+ leadership. Targets included identifying high-retention titles and emerging regional hits, delivering quarterly insight reports to guide Top Content launch decisions, and improving content-planning visibility across 20+ markets by approximately 15%.',
+          action: 'I partnered with analytics to analyze 30M+ viewing sessions across 20+ countries. I defined three standard KPIs to benchmark performance: Completion Rate (episodes fully watched ÷ episodes started × 100) showing content stickiness, Repeat Viewership (users who returned to re-watch ÷ total viewers × 100) capturing loyalty, and Audience Growth Rate (new viewers this period ÷ prior period viewers × 100 - 100) reflecting organic traction. Using these metrics, I identified 10+ trending titles with outsized retention or cross-market appeal (Pachinko in Japan, Severance in US, Ted Lasso globally). I consolidated findings into quarterly TV+ Review decks and newsletters, linking data to business impact such as regional audience growth and campaign ROI. I partnered with marketing and content-ops teams to translate insights into prioritized launch and localization plans.',
+          result: 'Guided five Apple TV+ Top Content launches using standardized, data-backed insights. Improved market-level visibility by approximately 18%, enhancing precision in regional targeting. Established a repeatable audience-insight framework adopted for quarterly planning across TV+ markets.'
+        }
+      },
+      {
+        title: 'Apple Music Search Behavior Analysis',
+        subtitle: 'Identified 10% growth potential by analyzing search-to-play conversion gaps',
+        resumeBullet: 'Uncovered a 10% growth potential by analyzing search behavior across 5M+ Apple Music streams, influencing discovery feature roadmap.',
+        star: {
+          situation: 'Apple Music had strong content but user feedback suggested many people struggled to find what they actually wanted, especially in emerging genres. The product team suspected there was a gap between what users were searching for and what they were actually finding and playing, but no one had quantified the opportunity.',
+          task: 'My objective was to analyze search behavior to identify where users were experiencing friction, quantify the growth opportunity from improving content discovery, and provide actionable insights for the discovery feature roadmap.',
+          action: 'I analyzed 5.2 million search queries and noticed that about 620,000 searches (roughly 12%) were high-intent searches that weren\'t converting into plays. For example, the query "Punjabi indie" had 140,000 searches in the quarter but only an 11% click-through rate despite strong user demand. Similar patterns existed for "lofi beats" and "chill instrumental," which had millions of total plays but surprisingly low search-to-play CTRs (9-13%). When I compared search demand with actual listening, I found these mismatches were leading to approximately 830,000 missed plays per quarter. Since total listening volume for those categories was around 8.1 million plays, the recoverable opportunity was roughly 10.2%. I also identified a high-intent cohort of around 120,000 users who repeatedly searched the same artist within 48 hours. When these users were shown relevant playlists, their conversion rate jumped from 13% to 32% — a 2.4x improvement.',
+          result: 'Uncovered 10% growth potential in content consumption by identifying search-to-play conversion gaps. Insights directly informed content strategy for mid-tier and emerging artists, leading to experiments in playlist placement and improved query mapping. The analysis shaped the discovery feature roadmap and provided a framework for ongoing search optimization.'
+        }
+      }
+    ]
+  },
+  {
+    company: 'Dfuse Tech',
+    role: 'Associate Analytics Consultant (Data Science - Research)',
+    location: 'Sterling, VA',
+    dates: 'August 2020 – November 2021',
+    context: 'Junior Data Scientist building ML solutions for security analytics, predictive maintenance, and marketing optimization.',
+    metrics: [
+      { value: '30%', label: 'False Positives', trend: 'down' },
+      { value: '93%', label: 'Classification Accuracy' },
+      { value: '35.7%', label: 'RUL Prediction', trend: 'up' },
+      { value: '25K+', label: 'Profiles Analyzed' }
+    ],
+    stories: [
+      {
+        title: 'Insider Threat Detection System (MVP)',
+        subtitle: 'Built anomaly detection MVP using machine learning on behavioral patterns',
+        resumeBullet: 'Delivered a scalable outlier detection solution using 5 behavioral and technical features, resulting in companywide adoption and optimized insider threat detection.',
+        star: {
+          situation: 'At Dfuse Tech, internal security teams relied on rigid rule-based alerts for insider threat monitoring. The system raised too many false positives and missed nuanced behavioral deviations, leading to alert fatigue and delayed responses. The data science team was asked to explore a machine learning-driven approach to make detection adaptive and behavior-aware.',
+          task: 'As a Junior Data Scientist, my responsibility was to research anomaly-detection methods that could learn from both behavioral and technical user patterns, build a working proof-of-concept (MVP) demonstrating improved precision versus rule-based detection, and collaborate with my manager to hand over a validated model for integration.',
+          action: 'I conducted exploratory data analysis on the CERT r3.2 dataset (~20 GB, 1,000 users, 500 days of logs) to understand behavior patterns linked to insider risk — login frequency, device usage, file activity, and privilege escalation. I extracted five key attributes (three behavioral, two technical) that best captured abnormal user behavior. I implemented an Isolation Forest model in Python using scikit-learn to detect anomalies without requiring labeled malicious data. I tuned parameters (contamination = 0.05, estimators = 100) for optimal recall-precision balance and validated on synthetic attack scenarios. I documented the model pipeline, data transformations, and thresholds for production engineers, and worked with the senior data scientist during integration testing.',
+          result: 'The MVP formed the core of Dfuse\'s insider-threat detection system, later adopted company-wide. Delivered approximately 30% false-positive reduction and faster analyst response times once integrated. The project became a reference framework for anomaly detection modules across Dfuse\'s security analytics portfolio.'
+        }
+      },
+      {
+        title: 'Aircraft Engine Predictive Maintenance',
+        subtitle: 'Achieved 93% failure classification accuracy using sensor data from 100 turbofan engines',
+        resumeBullet: 'Implemented supervised learning on sensor data from 100 turbofan engines, achieving 93% failure classification accuracy and a 35.7% boost in RUL prediction.',
+        star: {
+          situation: 'An aerospace client needed to predict turbofan engine failures before they happened, shifting from reactive to proactive maintenance. Maintenance teams were either running engines until warning lights triggered — risking costly downtime — or replacing them too early, wasting useful life. They needed two things: a risk classifier to flag engines nearing end-of-life, and a Remaining Useful Life (RUL) model to forecast how many cycles were left before failure.',
+          task: 'As a Junior Data Scientist, I was responsible for building a predictive maintenance MVP using NASA\'s CMAPSS FD001 dataset (100 engines with sensor readings). I needed to create both a classification model for failure risk and a regression model for RUL prediction.',
+          action: 'I started with label engineering, calculating RUL for each engine as (max_cycle - current_cycle). I discovered that early in an engine\'s life, sensor readings were flat with no degradation signal, so RUL values like 300+ just added noise. To solve this, I capped RUL at 125 cycles, focusing training on the meaningful degradation zone — this single change improved RMSE from 31.95 to 21.9 (approximately 31% error reduction). For classification, I trained and tuned Random Forest and XGBoost classifiers using 16 key sensor features to flag engines within 50 cycles of failure. For regression, I built an SVR model on the clipped RUL target using MinMax scaling, 2nd-order polynomial sensor interactions, and 37 top features selected to avoid overfitting.',
+          result: 'Delivered an end-to-end predictive maintenance MVP. The XGBoost classifier achieved 93% accuracy (95.5% on validation) in predicting engines within 50 cycles of failure. The SVR model achieved RMSE of 20.54 and R² of 0.756, a 35.7% reduction in error compared to baseline. This enabled the client\'s maintenance team to plan interventions in advance, cut unplanned downtime, and optimize part replacement cycles — moving from guesswork to data-driven scheduling.'
+        }
+      },
+      {
+        title: 'Customer Segmentation & Marketing Optimization',
+        subtitle: 'Identified 3 high-value segments contributing to 40% of deposits',
+        resumeBullet: 'Built customer segmentation model using PySpark to analyze 25K+ customer profiles, identifying 3 high-value segments that contributed to 40% of deposits and enabling 12-15% reduction in marketing spend.',
+        star: {
+          situation: 'A mid-sized U.S. bank was spending heavily on marketing campaigns to get customers to open term deposits, but their conversion rates were poor. The problem? They were treating all customers the same — blasting the same message to everyone — without understanding which types of customers were actually likely to respond. Leadership had no visibility into who their best prospects were.',
+          task: 'My job was to analyze their customer data and figure out: Who are the customers most likely to say yes? And how can marketing spend less while getting the same (or better) results?',
+          action: 'I analyzed around 25,000 customer records combining financial data (account balance, loans) with demographic info (age, education, job type) and past campaign history. The first insight was surprising: traditional factors like education or marital status barely mattered. What actually predicted success was behavior — specifically, how long the sales call lasted and whether the customer had responded positively to a previous campaign. Using this, I built customer segments: High-value segment (customers with healthy balances, no outstanding loans, and prior positive engagement — 18% more likely to convert) and Low-value segment (customers with zero or negative balances who had ignored previous campaigns — less than 10% chance of converting). I also built a predictive model that could score any customer\'s likelihood to convert, so marketing could prioritize their outreach.',
+          result: 'The bank now had a clear picture of who to target and who to skip. They identified 3 high-value segments that drove about 40% of all successful deposits. By focusing on these segments instead of blasting everyone, they reduced marketing spend by 12-15% while maintaining the same conversion numbers. The key insight: stop guessing, start targeting.'
+        }
+      }
+    ]
+  }
+];

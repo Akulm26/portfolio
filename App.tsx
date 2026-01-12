@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Linkedin, Calendar, MapPin, ArrowRight, ExternalLink, Download, Plus, Zap, Target, Activity, Award, Brain, Microscope, Compass, Layers, Search, RefreshCw, BarChart3, Workflow, GraduationCap, Globe, Sparkles, Coffee, Phone, Clapperboard, Upload, Loader2, Play, Image as ImageIcon, Wand2, Check } from 'lucide-react';
 import { PROJECTS, SECONDARY_PROJECTS, CAPABILITIES, STEPS, PRINCIPLES, CASE_STUDIES } from './constants';
 import { GoogleGenAI } from "@google/genai";
+import WorkExperience from './WorkExperience';
 
 const ImageEditorModal: React.FC<{ 
   isOpen: boolean; 
@@ -3448,27 +3449,23 @@ const WorkPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-white">
+    <div className="min-h-screen bg-slate-900">
       {/* Header */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <button onClick={onBack} className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
+          <button onClick={onBack} className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors">
             <ArrowRight className="rotate-180" size={18} />
             <span className="font-medium">Back to Portfolio</span>
           </button>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20">
             Get in Touch
           </a>
         </div>
       </nav>
 
-      {/* Centered Title */}
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight">
-            Work
-          </h1>
-        </div>
+      {/* Work Experience Section */}
+      <div className="pt-20">
+        <WorkExperience />
       </div>
     </div>
   );
