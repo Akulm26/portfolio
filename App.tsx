@@ -1122,15 +1122,10 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Certifications */}
-                <div className="space-y-3 pt-6 border-t border-slate-50">
+                <div className="space-y-4 pt-6 border-t border-slate-50">
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                      <h4 className="text-text-primary font-bold text-base">Project Management Institute</h4>
-                    </div>
-                    <div className="ml-3.5 space-y-1">
-                      <p className="text-text-secondary text-sm">Project Management Professional® <span className="text-text-secondary/60 text-xs">(ID: 11445436)</span></p>
-                    </div>
+                    <h4 className="text-text-primary font-bold text-xl">Project Management Institute</h4>
+                    <p className="text-text-secondary text-base">Project Management Professional® <span className="text-text-secondary/60 text-sm">(ID: 11445436)</span></p>
                   </div>
                 </div>
               </div>
