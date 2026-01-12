@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Linkedin, Calendar, MapPin, ArrowRight, ExternalLink, Download, Plus, Zap, Target, Activity, Award, Brain, Microscope, Compass, Layers, Search, RefreshCw, BarChart3, Workflow, GraduationCap, Globe, Sparkles, Coffee, Phone, Clapperboard, Upload, Loader2, Play, Image as ImageIcon, Wand2, Check } from 'lucide-react';
-import { PROJECTS, SECONDARY_PROJECTS, CAPABILITIES, STEPS, PRINCIPLES, CASE_STUDIES } from './constants';
+import { PROJECTS, SECONDARY_PROJECTS, CAPABILITIES, STEPS, PRINCIPLES, CASE_STUDIES, WORK_EXPERIENCES } from './constants';
 import { GoogleGenAI } from "@google/genai";
 import WorkExperience from './WorkExperience';
 
@@ -473,6 +473,280 @@ const VeoModal: React.FC<{ isOpen: boolean; onClose: () => void; initialImage?: 
         </div>
       </div>
     </div>
+  );
+};
+
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+const Chatbot: React.FC<{ isOpen: boolean; onClose: () => void; onToggle: () => void }> = ({ isOpen, onClose, onToggle }) => {
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      role: 'assistant',
+      content: "Hi! 👋 I'm your AI assistant for this portfolio. Ask me anything about projects, work experience, skills, or background!"
+    }
+  ]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  useEffect(() => {
+    if (isOpen) {
+      inputRef.current?.focus();
+    }
+  }, [isOpen]);
+
+  const buildKnowledgeBase = () => {
+    const kb = `
+# PORTFOLIO OWNER INFORMATION
+
+## PROJECTS
+
+### Featured Projects:
+${PROJECTS.map(p => `
+**${p.title}** (${p.type})
+- Role: ${p.role || 'N/A'}
+- Headline: ${p.headline}
+- Description: ${p.description}
+- Key Metric: ${p.metricLabel}: ${p.metricValue}
+`).join('\n')}
+
+### Case Studies:
+${Object.values(CASE_STUDIES).map(cs => `
+**${cs.id.toUpperCase()}**
+Overview: ${cs.overview}
+Problem: ${cs.problem}
+Solution: ${cs.solution}
+Results: ${cs.results.map(r => `${r.metric}: ${r.value} - ${r.description}`).join('; ')}
+Key Learnings: ${cs.learnings.join('; ')}
+${cs.tools ? 'Tools: ' + cs.tools.join(', ') : ''}
+`).join('\n')}
+
+## CAPABILITIES
+${CAPABILITIES.map(c => `
+**${c.title}**
+${c.description}
+Proof: ${c.proof}
+`).join('\n')}
+
+## APPROACH (Product Development Process)
+${STEPS.map(s => `
+**${s.icon} ${s.title}**
+${s.description}
+`).join('\n')}
+
+## PRINCIPLES (Product Philosophy)
+${PRINCIPLES.map(p => `
+**${p.title}**
+${p.description}
+`).join('\n')}
+
+## WORK EXPERIENCE
+${WORK_EXPERIENCES.map(w => `
+**${w.role}** at **${w.company}**
+${w.location} | ${w.dates}
+Context: ${w.context}
+Key Metrics: ${w.metrics.map(m => `${m.label}: ${m.value}${m.trend ? ' (' + m.trend + ')' : ''}`).join(', ')}
+
+Stories:
+${w.stories.map(s => `
+- ${s.title}: ${s.subtitle}
+  Situation: ${s.star.situation}
+  Task: ${s.star.task}
+  Action: ${s.star.action}
+  Result: ${s.star.result}
+`).join('\n')}
+`).join('\n')}
+
+## CONTACT INFORMATION
+- Email: Available on the portfolio website
+- LinkedIn: Available on the portfolio website
+- Portfolio showcases AI product development, growth & retention optimization, data-informed strategy, and 0→1 product thinking
+`;
+    return kb;
+  };
+
+  const handleSend = async () => {
+    if (!input.trim() || isLoading) return;
+
+    const userMessage: ChatMessage = { role: 'user', content: input };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const knowledgeBase = buildKnowledgeBase();
+
+      const systemPrompt = `You are a helpful AI assistant for a product manager's portfolio website. You answer questions about the portfolio owner's projects, work experience, skills, and background.
+
+Here is comprehensive information about the portfolio owner:
+
+${knowledgeBase}
+
+Instructions:
+- Answer questions based ONLY on the information provided above
+- Be conversational, friendly, and concise
+- Use bullet points for clarity when listing multiple items
+- If asked about contact info, direct them to the Connect section on the website
+- If asked about something not in the knowledge base, politely say you don't have that specific information
+- Highlight impressive metrics and achievements when relevant
+- Focus on the "why" and impact, not just the "what"`;
+
+      const conversationHistory = messages.slice(-6).map(m => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`).join('\n\n');
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-1.5-flash',
+        contents: {
+          parts: [{
+            text: `${systemPrompt}\n\nRecent conversation:\n${conversationHistory}\n\nUser: ${input}\n\nAssistant:`
+          }]
+        },
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 500,
+        }
+      });
+
+      const responseText = response.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I couldn\'t generate a response.';
+
+      const assistantMessage: ChatMessage = {
+        role: 'assistant',
+        content: responseText
+      };
+
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch (error: any) {
+      console.error('Chat error:', error);
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Sorry, I encountered an error. Please try again.'
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
+  if (!isOpen) {
+    return (
+      <button
+        onClick={onToggle}
+        className="fixed bottom-6 right-6 z-[90] w-16 h-16 bg-gradient-to-br from-accent to-blue-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group hover:shadow-accent/50"
+        aria-label="Open chat"
+      >
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-pulse border-2 border-white"></span>
+      </button>
+    );
+  }
+
+  return (
+    <>
+      <div className="fixed bottom-6 right-6 z-[90] w-[400px] h-[600px] bg-white rounded-[32px] shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-300">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-accent to-blue-600 text-white p-6 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+              <Brain className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="font-bold text-lg">Portfolio Assistant</h3>
+              <p className="text-xs text-white/80">Powered by Gemini AI</p>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Messages */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50">
+          {messages.map((msg, idx) => (
+            <div
+              key={idx}
+              className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+            >
+              <div
+                className={`max-w-[85%] rounded-2xl px-4 py-3 ${
+                  msg.role === 'user'
+                    ? 'bg-accent text-white rounded-br-sm'
+                    : 'bg-white text-text-primary rounded-bl-sm shadow-sm border border-slate-100'
+                }`}
+              >
+                <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+              </div>
+            </div>
+          ))}
+          {isLoading && (
+            <div className="flex justify-start">
+              <div className="bg-white text-text-primary rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm border border-slate-100">
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                  <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                  <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                </div>
+              </div>
+            </div>
+          )}
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Input */}
+        <div className="p-4 bg-white border-t border-slate-100">
+          <div className="flex gap-2">
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Ask me anything..."
+              disabled={isLoading}
+              className="flex-1 px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:ring-2 focus:ring-accent/20 focus:border-accent outline-none transition-all disabled:opacity-50"
+            />
+            <button
+              onClick={handleSend}
+              disabled={isLoading || !input.trim()}
+              className="w-12 h-12 bg-accent text-white rounded-2xl hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center shadow-lg hover:shadow-accent/30"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
+          <p className="text-[10px] text-slate-400 mt-2 text-center">
+            AI responses may vary. Information based on portfolio data.
+          </p>
+        </div>
+      </div>
+
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[89] animate-in fade-in duration-300"
+        onClick={onClose}
+      />
+    </>
   );
 };
 
@@ -3649,6 +3923,7 @@ const App: React.FC = () => {
   const [modalImage, setModalImage] = useState<string | undefined>(undefined);
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
   const [editedImages, setEditedImages] = useState<Record<string, string>>({});
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const openAnimate = (img: string) => {
     setModalImage(img);
@@ -3690,35 +3965,107 @@ const App: React.FC = () => {
   };
 
   if (currentPage === 'cerebro-ai') {
-    return <CerebroCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <CerebroCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'leaklock') {
-    return <LeakLockCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <LeakLockCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'hinge-roadmap') {
-    return <HingeCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <HingeCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'nike-app') {
-    return <NikeCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <NikeCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'apple-stock') {
-    return <AppleStockCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <AppleStockCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'elevn-teardown') {
-    return <ElevnCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <ElevnCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'udemy-sense') {
-    return <UdemyCaseStudyPage onBack={handleBackToWork} />;
+    return (
+      <>
+        <UdemyCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   if (currentPage === 'work-page') {
-    return <WorkPage onBack={handleBackToHome} />;
+    return (
+      <>
+        <WorkPage onBack={handleBackToHome} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
   }
 
   const handleWorkClick = () => {
@@ -3746,6 +4093,11 @@ const App: React.FC = () => {
         onClose={() => setIsEditModalOpen(false)}
         initialImage={modalImage}
         onImageEdited={handleImageEdited}
+      />
+      <Chatbot
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+        onToggle={() => setIsChatOpen(!isChatOpen)}
       />
     </div>
   );
