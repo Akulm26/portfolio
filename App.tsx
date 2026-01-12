@@ -3675,32 +3675,46 @@ const App: React.FC = () => {
     setCurrentPage('home');
   };
 
+  const handleBackToWork = () => {
+    setCurrentPage('home');
+    // Scroll to work section after a brief delay to allow page render
+    setTimeout(() => {
+      const workSection = document.getElementById('work');
+      if (workSection) {
+        const headerOffset = 80;
+        const elementPosition = workSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   if (currentPage === 'cerebro-ai') {
-    return <CerebroCaseStudyPage onBack={handleBackToHome} />;
+    return <CerebroCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'leaklock') {
-    return <LeakLockCaseStudyPage onBack={handleBackToHome} />;
+    return <LeakLockCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'hinge-roadmap') {
-    return <HingeCaseStudyPage onBack={handleBackToHome} />;
+    return <HingeCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'nike-app') {
-    return <NikeCaseStudyPage onBack={handleBackToHome} />;
+    return <NikeCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'apple-stock') {
-    return <AppleStockCaseStudyPage onBack={handleBackToHome} />;
+    return <AppleStockCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'elevn-teardown') {
-    return <ElevnCaseStudyPage onBack={handleBackToHome} />;
+    return <ElevnCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'udemy-sense') {
-    return <UdemyCaseStudyPage onBack={handleBackToHome} />;
+    return <UdemyCaseStudyPage onBack={handleBackToWork} />;
   }
 
   if (currentPage === 'work-page') {
