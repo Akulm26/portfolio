@@ -8,6 +8,12 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/14nBvc_IZmqBXYpe432IVH7wTPCmGiYf-
 
+## Features
+
+- **AI-Powered Chatbot**: Interactive assistant that answers questions about projects, work experience, and skills
+- **Image Editor**: AI-driven visual refinement using Gemini 2.5 Flash Image
+- **Video Generator**: Transform static visuals into dynamic animations using Veo
+
 ## Run Locally
 
 **Prerequisites:**  Node.js

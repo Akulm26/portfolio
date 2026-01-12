@@ -582,10 +582,16 @@ ${w.stories.map(s => `
 
     const userMessage: ChatMessage = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
+    const userInput = input;
     setInput('');
     setIsLoading(true);
 
     try {
+      // Check for API key
+      if (!process.env.API_KEY) {
+        throw new Error('API key not configured. Please set up your Gemini API key.');
+      }
+
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const knowledgeBase = buildKnowledgeBase();
 
@@ -606,20 +612,23 @@ Instructions:
 
       const conversationHistory = messages.slice(-6).map(m => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`).join('\n\n');
 
+      const fullPrompt = `${systemPrompt}\n\nRecent conversation:\n${conversationHistory}\n\nUser: ${userInput}\n\nAssistant:`;
+
       const response = await ai.models.generateContent({
         model: 'gemini-1.5-flash',
-        contents: {
+        contents: [{
+          role: 'user',
           parts: [{
-            text: `${systemPrompt}\n\nRecent conversation:\n${conversationHistory}\n\nUser: ${input}\n\nAssistant:`
+            text: fullPrompt
           }]
-        },
+        }],
         generationConfig: {
           temperature: 0.7,
           maxOutputTokens: 500,
         }
       });
 
-      const responseText = response.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I couldn\'t generate a response.';
+      const responseText = response.response?.text?.() || response.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I couldn\'t generate a response.';
 
       const assistantMessage: ChatMessage = {
         role: 'assistant',
@@ -629,9 +638,19 @@ Instructions:
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error: any) {
       console.error('Chat error:', error);
+      let errorMessage = 'Sorry, I encountered an error. Please try again.';
+
+      if (error.message?.includes('API key')) {
+        errorMessage = 'API key not configured. Please set up your Gemini API key in the environment variables.';
+      } else if (error.message?.includes('quota')) {
+        errorMessage = 'API quota exceeded. Please check your Gemini API usage.';
+      } else if (error.message) {
+        errorMessage = `Error: ${error.message}`;
+      }
+
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: 'Sorry, I encountered an error. Please try again.'
+        content: errorMessage
       }]);
     } finally {
       setIsLoading(false);
