@@ -861,11 +861,13 @@ const Header: React.FC<{ onWorkClick?: () => void }> = ({ onWorkClick }) => {
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
-      <div className={`md:hidden fixed top-0 left-0 w-full h-full z-[100] bg-white transition-transform duration-500 overflow-hidden flex flex-col items-start justify-center px-8 space-y-8 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        {navLinks.map((link) => (
-          <a key={link.name} href={link.href === 'work-page' ? '#' : link.href} className="text-4xl font-display font-bold text-text-primary" onClick={(e) => handleLinkClick(e, link.href)}>{link.name}</a>
-        ))}
-        <a href="#connect" className="text-4xl font-display font-bold text-accent" onClick={(e) => handleLinkClick(e, '#connect')}>Connect</a>
+      <div className={`md:hidden fixed inset-0 z-[100] bg-white transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ height: '100vh', overflow: 'hidden' }}>
+        <div className="h-full flex flex-col items-start justify-center px-8 space-y-8">
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.href === 'work-page' ? '#' : link.href} className="text-4xl font-display font-bold text-text-primary" onClick={(e) => handleLinkClick(e, link.href)}>{link.name}</a>
+          ))}
+          <a href="#connect" className="text-4xl font-display font-bold text-accent" onClick={(e) => handleLinkClick(e, '#connect')}>Connect</a>
+        </div>
       </div>
     </nav>
   );
