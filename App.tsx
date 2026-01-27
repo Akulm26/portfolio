@@ -3743,6 +3743,278 @@ const UdemyCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   );
 };
 
+const RedditCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-white">
+      {/* Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <button onClick={onBack} className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
+            <ArrowRight className="rotate-180" size={18} />
+            <span className="font-medium">Back to Portfolio</span>
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">
+            Get in Touch
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-20 pb-8">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary tracking-tight mb-6">
+              Deconstructing the <span className="text-accent">Black Box</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-text-secondary mb-6">The Reddit Technical Case</p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Technical Empathy</span>
+              <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">System Design</span>
+              <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Database Trade-offs</span>
+              <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">API Design</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Point */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">The Pain Point</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>
+                <span className="font-semibold text-text-primary">The "Non-Technical" PM Stigma.</span> I walked into the final round at Reddit confident in my product sense and metrics, but the "Technical Round" with the CTO loomed like a gatekeeper. As an analyst-turned-PM, my fear was valid: I wasn't a software engineer.
+              </p>
+              <p>
+                The challenge wasn't just "knowing the tech." It was demonstrating <span className="font-semibold text-accent">Technical Empathy</span>. I needed to prove I could sit in a room with engineers, understand the architectural costs of my product decisions, and design systems that scale—without needing to write production code myself.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">The Approach</h2>
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+              <p>
+                <span className="font-semibold text-text-primary">The "City Planner" Mindset.</span> I shifted my perspective. Instead of trying to be the architect (who decides how every brick is laid), I acted as the city planner (who decides where the zones go and how traffic flows).
+              </p>
+              <p>
+                I used <span className="font-semibold text-accent">First Principles Thinking</span> to reverse-engineer Reddit. I didn't ask "What database does Reddit use?" I asked, "If I have 50 million daily users trying to upvote a cat video at the same time, what kind of system breaks? And what kind of system survives?"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">The Solution</h2>
+
+            {/* 1. Tech Stack */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-accent mb-6">1. The Tech Stack: The Three-Tier Logic</h3>
+              <p className="text-lg text-text-secondary mb-6">To explain Reddit's infrastructure, I moved beyond buzzwords and focused on functionality:</p>
+
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-xl border border-slate-200">
+                  <h4 className="text-xl font-bold text-text-primary mb-3">The Storefront (Frontend)</h4>
+                  <p className="text-text-secondary">I positioned <span className="font-semibold">React.js</span> not just as a library, but as a strategic choice for component reusability. It allows Reddit to maintain a complex, module-heavy feed that feels snappy and app-like on a browser.</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl border border-slate-200">
+                  <h4 className="text-xl font-bold text-text-primary mb-3">The Traffic Control (Backend)</h4>
+                  <p className="text-text-secondary">I highlighted a hybrid approach. <span className="font-semibold">Python</span> for the core business logic (community rules, moderation) because it allows for rapid iteration, and <span className="font-semibold">Go (Golang)</span> for high-concurrency services (real-time chat, notifications) where speed is non-negotiable.</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl border border-slate-200">
+                  <h4 className="text-xl font-bold text-text-primary mb-3">The Vault (Database)</h4>
+                  <p className="text-text-secondary">I distinguished between <span className="font-semibold">PostgreSQL</span> for things that must be accurate (User Profiles, Billing) and <span className="font-semibold">Cassandra (NoSQL)</span> for things that must be fast (Upvotes, Feed Activity).</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Trade-off */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-accent mb-6">2. The Trade-off: Consistency vs. Scale</h3>
+              <p className="text-lg text-text-secondary mb-6">The interviewer asked me to choose a database technology. I framed the answer around the <span className="font-semibold">CAP Theorem</span> (Consistency, Availability, Partition Tolerance):</p>
+
+              <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-4">
+                <div>
+                  <span className="font-bold text-text-primary">The Decision:</span>
+                  <span className="text-text-secondary"> I chose PostgreSQL over NoSQL for the User Identity system.</span>
+                </div>
+                <div>
+                  <span className="font-bold text-text-primary">The Why:</span>
+                  <span className="text-text-secondary"> In a social product, you can afford to lose a single upvote (eventual consistency), but you cannot afford to lose a user's account data. I prioritized <span className="font-semibold text-accent">Data Integrity</span> over raw write speed for the registration flow, showing I understand risk management.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Blueprint */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-accent mb-6">3. The Blueprint: Relational Mapping</h3>
+              <p className="text-lg text-text-secondary mb-6">Instead of writing dry schema definitions, I mapped the "Social Graph" of Reddit. I explained how the data entities interact:</p>
+
+              <div className="bg-white p-6 rounded-xl border border-slate-200">
+                <ul className="space-y-3 text-text-secondary">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold">→</span>
+                    <span><span className="font-semibold text-text-primary">Users</span> create <span className="font-semibold text-text-primary">Subreddits</span>.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold">→</span>
+                    <span><span className="font-semibold text-text-primary">Subreddits</span> host <span className="font-semibold text-text-primary">Posts</span>.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold">→</span>
+                    <span><span className="font-semibold text-text-primary">Posts</span> spawn threaded <span className="font-semibold text-text-primary">Comments</span>.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold">→</span>
+                    <span><span className="font-semibold text-text-primary">Votes</span> act as the currency connecting all three.</span>
+                  </li>
+                </ul>
+                <p className="mt-6 text-text-secondary italic border-t border-slate-200 pt-4">
+                  <span className="font-semibold text-text-primary">Key Insight:</span> I emphasized the complexity of the nested comment structure and how that dictates the database design (need for parent-child relationships).
+                </p>
+              </div>
+            </div>
+
+            {/* 4. Analytics Strategy */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-accent mb-6">4. The Analytics Strategy (No Code Required)</h3>
+              <p className="text-lg text-text-secondary mb-6">Rather than writing SQL syntax, I explained the logic of extraction. To analyze the feed, I defined the query parameters needed to solve business problems:</p>
+
+              <div className="overflow-x-auto">
+                <table className="w-full bg-white rounded-xl border border-slate-200">
+                  <thead>
+                    <tr className="border-b border-slate-300">
+                      <th className="py-3 px-4 text-left font-semibold text-text-primary">Business Problem</th>
+                      <th className="py-3 px-4 text-left font-semibold text-text-primary">Query Logic</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-text-secondary text-sm">
+                    <tr className="border-b border-slate-200">
+                      <td className="py-3 px-4 font-medium text-text-primary">Viral Detection</td>
+                      <td className="py-3 px-4">Logic to aggregate upvotes per hour to identify trending content</td>
+                    </tr>
+                    <tr className="border-b border-slate-200">
+                      <td className="py-3 px-4 font-medium text-text-primary">User Retention</td>
+                      <td className="py-3 px-4">Logic to link "Subreddits Created" to "User Account Age" to identify power users</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-medium text-text-primary">Partnership Value</td>
+                      <td className="py-3 px-4">Logic to filter posts containing external URLs to measure outbound traffic value</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* 5. API Economy */}
+            <div>
+              <h3 className="text-2xl font-bold text-accent mb-6">5. The API Economy: The DuckDuckGo Partnership</h3>
+              <p className="text-lg text-text-secondary mb-6">I designed the API not just as a data pipe, but as a <span className="font-semibold">Product Feature</span>.</p>
+
+              <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-4">
+                <div>
+                  <span className="font-bold text-text-primary">The Endpoint:</span>
+                  <span className="text-text-secondary"> A dedicated "Search Partner" endpoint.</span>
+                </div>
+                <div>
+                  <span className="font-bold text-text-primary">The Strategy:</span>
+                  <span className="text-text-secondary"> The API response was designed to be lightweight (JSON) to ensure zero latency for DuckDuckGo users. I included metadata for "Upvote Count" and "Subreddit Relevance" so the partner engine could rank Reddit results intelligently, ensuring high click-through rates (CTR) and maximizing our revenue share.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">The Impact</h2>
+            <p className="text-lg text-text-secondary mb-8">This approach shifted the interview dynamic from an interrogation to a collaboration.</p>
+
+            <div className="space-y-6">
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h4 className="text-xl font-bold text-accent mb-3">Bridged the Gap</h4>
+                <p className="text-text-secondary">I proved that while I don't push code, I understand the implications of code. I can anticipate when a feature request will require a database migration vs. a simple UI tweak.</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h4 className="text-xl font-bold text-accent mb-3">Built Engineering Trust</h4>
+                <p className="text-text-secondary">By correctly identifying the trade-offs between SQL and NoSQL, I showed the CTO that I wouldn't be a PM who promises impossible features to stakeholders.</p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h4 className="text-xl font-bold text-accent mb-3">Business-Aligned Tech</h4>
+                <p className="text-text-secondary">The API design demonstrated that I view technology as a vehicle for business growth (revenue share/traffic), not just engineering homework.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Learned */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">What I Learned</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold mb-3">Technical literacy is the ultimate empathy.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  I learned that you don't need to be a developer to ace a technical round; you need to be a <span className="font-semibold text-white">Translator</span>. The most valuable PMs are the ones who can look at a Business Goal (Revenue) and understand the Technical Lever (API Latency) required to pull it.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3">Architecture is Product.</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  The way we structure our data ultimately defines the limits of what features we can build. Understanding the schema isn't just "tech stuff"—it's the foundation of the roadmap.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
+            <p className="text-text-secondary mb-8">Let's discuss how I can help with your product challenges.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2">
+                <Mail size={20} />
+                <span>Get in Touch</span>
+              </a>
+              <button onClick={onBack} className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all">
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 const WorkPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -4072,6 +4344,19 @@ const App: React.FC = () => {
     return (
       <>
         <UdemyCaseStudyPage onBack={handleBackToWork} />
+        <Chatbot
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onToggle={() => setIsChatOpen(!isChatOpen)}
+        />
+      </>
+    );
+  }
+
+  if (currentPage === 'reddit-technical') {
+    return (
+      <>
+        <RedditCaseStudyPage onBack={handleBackToWork} />
         <Chatbot
           isOpen={isChatOpen}
           onClose={() => setIsChatOpen(false)}
