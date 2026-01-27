@@ -1010,7 +1010,7 @@ const SelectedWork: React.FC<{
           </div>
 
           {showSecondary && (
-            <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 duration-700">
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 duration-700">
               {SECONDARY_PROJECTS.map((project) => (
                 <div key={project.id} className="bg-white p-8 rounded-3xl border border-slate-100 hover:border-accent/20 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                   <div>
