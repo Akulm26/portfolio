@@ -85,12 +85,12 @@ export const SECONDARY_PROJECTS: Project[] = [
     ctaText: 'View Teardown',
   },
   {
-    id: 'new-project',
-    title: 'New Project',
-    headline: 'Coming Soon',
-    type: 'Project',
-    description: 'Content coming soon.',
-    ctaText: 'View Project',
+    id: 'reddit-technical',
+    title: 'Deconstructing the Black Box',
+    headline: 'The Reddit Technical Case',
+    type: 'Technical Case Study',
+    description: 'A deep dive into demonstrating technical empathy as a PM - understanding architectural trade-offs, database decisions, and API design without writing production code.',
+    ctaText: 'View Case Study',
   },
 ];
 
@@ -340,14 +340,26 @@ export const CASE_STUDIES: Record<string, CaseStudyContent> = {
       'Enterprise (Udemy Business) is a different game - diversifies revenue and positions platform as workforce development partner'
     ]
   },
-  'new-project': {
-    id: 'new-project',
-    overview: 'Content coming soon.',
-    problem: 'Content coming soon.',
-    approach: [],
-    solution: 'Content coming soon.',
-    results: [],
-    learnings: []
+  'reddit-technical': {
+    id: 'reddit-technical',
+    overview: 'A deep dive into demonstrating technical empathy as a PM during a technical interview with a CTO - proving the ability to understand architectural trade-offs, database decisions, and API design without writing production code.',
+    problem: 'The "Non-Technical" PM Stigma. Walking into a final round at Reddit confident in product sense and metrics, but facing the "Technical Round" with the CTO. The challenge wasn\'t just "knowing the tech" - it was demonstrating Technical Empathy and proving the ability to sit in a room with engineers, understand the architectural costs of product decisions, and design systems that scale.',
+    approach: [
+      'Adopted the "City Planner" Mindset - acting as the city planner (who decides where zones go and how traffic flows) rather than the architect (who decides how every brick is laid)',
+      'Used First Principles Thinking to reverse-engineer Reddit - asking "If I have 50 million daily users trying to upvote a cat video at the same time, what kind of system breaks? And what kind of system survives?"'
+    ],
+    solution: 'Demonstrated technical literacy through three key areas: (1) Tech Stack explanation using Three-Tier Logic - Frontend (React.js for component reusability), Backend (Python for business logic, Go for high-concurrency services), Database (PostgreSQL for accuracy, Cassandra for speed); (2) Trade-off analysis using CAP Theorem - choosing PostgreSQL for User Identity system prioritizing Data Integrity over raw write speed; (3) API Economy design - creating a lightweight JSON endpoint for search partners with metadata for intelligent ranking.',
+    results: [
+      { metric: 'Gap Bridged', value: 'Yes', description: 'Proved that while not pushing code, understanding the implications of code is key' },
+      { metric: 'Engineering Trust', value: 'Built', description: 'Correctly identifying SQL vs NoSQL trade-offs showed capability to not promise impossible features' },
+      { metric: 'Business Alignment', value: 'Demonstrated', description: 'API design showed technology as a vehicle for business growth (revenue share/traffic)' }
+    ],
+    learnings: [
+      'Technical literacy is the ultimate empathy - you don\'t need to be a developer to ace a technical round; you need to be a Translator',
+      'The most valuable PMs are the ones who can look at a Business Goal (Revenue) and understand the Technical Lever (API Latency) required to pull it',
+      'Architecture is Product - the way we structure our data ultimately defines the limits of what features we can build',
+      'Understanding the schema isn\'t just "tech stuff" - it\'s the foundation of the roadmap'
+    ]
   }
 };
 
