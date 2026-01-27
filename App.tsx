@@ -3771,6 +3771,17 @@ const RedditCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               Deconstructing the <span className="text-accent">Black Box</span>
             </h1>
             <p className="text-xl md:text-2xl text-text-secondary mb-6">The Reddit Technical Case</p>
+            <div className="mb-6">
+              <a
+                href="https://claude.ai/public/artifacts/8bc417d3-202e-46d7-9f51-796b42fcb803"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-accent/30"
+              >
+                <ExternalLink size={20} />
+                <span>View Case Study</span>
+              </a>
+            </div>
             <div className="flex flex-wrap justify-center gap-3 mt-6">
               <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">Technical Empathy</span>
               <span className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-text-secondary">System Design</span>
@@ -4000,7 +4011,16 @@ const RedditCaseStudyPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <h2 className="text-3xl font-bold text-text-primary mb-4">Interested in working together?</h2>
             <p className="text-text-secondary mb-8">Let's discuss how I can help with your product challenges.</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2">
+              <a
+                href="https://claude.ai/public/artifacts/8bc417d3-202e-46d7-9f51-796b42fcb803"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all flex items-center gap-2"
+              >
+                <ExternalLink size={20} />
+                <span>View Full Case Study</span>
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akulsuhailmalhotra@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-white text-text-primary px-8 py-4 rounded-xl font-bold border-2 border-slate-200 hover:border-accent transition-all flex items-center gap-2">
                 <Mail size={20} />
                 <span>Get in Touch</span>
               </a>
