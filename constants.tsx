@@ -439,23 +439,21 @@ The hybrid model became the foundation for our personalization infrastructure. T
       {
         title: 'AI News Platform Architecture',
         subtitle: 'Designed end-to-end architecture for content ingestion, AI summarization, and personalization',
-        resumeBullet: 'Designed end-to-end architecture for AI-powered mobile news app, defining RSS feed parsing for 50+ sources, integrating GPT-3.5 LLM summarization reducing reading time 40%, and implementing hybrid recommendation system that drove 3.2x engagement improvement (DAU/MAU: 12%→38%) and scaled to 50K users, becoming Wareline\'s flagship product and signing 3 new media clients',
+        resumeBullet: 'Designed end-to-end architecture for AI-powered mobile news app, defining RSS feed parsing for 50+ sources, integrating GPT-3.5 LLM summarization reducing reading time 40%, and implementing hybrid recommendation system achieving 38% DAU/MAU and scaling to 50K users, becoming Wareline\'s flagship product and signing 3 media company clients',
         star: {
-          situation: `Wareline's media client was losing mobile users to aggregators like Google News and Flipboard. Their existing app had poor engagement:
-
-• **12% DAU/MAU** and **2.3-minute sessions** — users overwhelmed by generic chronological feeds
+          situation: `Wareline Technologies identified a gap in the news aggregator market — existing apps like Google News and Flipboard were losing user engagement due to generic, overwhelming feeds. Wareline saw an opportunity to build its own AI-powered news platform.
 
 **The Challenge:** Build an AI-native mobile app from scratch with no existing infrastructure. We needed to define the entire technical architecture — from content ingestion to personalized delivery — within a **6-month timeline** and **$5K/month infrastructure budget**.
 
-**The Opportunity:** If we could demonstrate **3x engagement improvement**, this would become Wareline's flagship AI product for media companies.`,
+**The Opportunity:** If we could demonstrate strong engagement metrics, this would become Wareline's flagship AI product and attract media companies as clients.`,
           task: `As Product Manager, I needed to:
 
 • **Define product architecture** from content aggregation to mobile delivery (iOS + Android)
 • **Make critical AI/ML decisions** on summarization approach and personalization algorithms
 • **Solve the cold-start problem:** Deliver personalized feeds from Day 1 with zero user data
-• **Drive measurable impact:** Achieve 3x engagement improvement (12% → 36% DAU/MAU) to prove product-market fit
+• **Drive measurable impact:** Achieve strong engagement metrics (target: 35%+ DAU/MAU) to prove product-market fit
 
-**Success Target:** DAU/MAU from **12% → 36%** with statistically significant results, staying within budget constraints.`,
+**Success Target:** Industry-leading DAU/MAU (35%+) with statistically significant retention, staying within budget constraints.`,
           action: `**1. User Research Defined Product Strategy**
 Conducted a survey (500 respondents) and 20 in-depth user interviews with news app power users.
 
@@ -517,16 +515,16 @@ Beta feedback revealed users didn't trust black-box recommendations.
 **Week 3 Insight:** Filter bubbles — tech-heavy users stopped seeing diverse content. Added diversity constraints (top 20 must span 3+ categories) and serendipity slots. Counterintuitively, engagement increased — D7 retention improved 8%.`,
           result: `**Engagement Impact (6 Months Post-Launch)**
 
-**Primary Metrics (Exceeded 3x Goal):**
-• **DAU/MAU:** 12% → 38% **(3.2x improvement, beat 3x target)**
-• **Session Length:** 2.3 min → 6.7 min (2.9x)
-• **D7 Retention:** 18% → 45% (2.5x)
+**Primary Metrics (Exceeded Target):**
+• **DAU/MAU:** 38% (beat 35% target, top-tier for news apps)
+• **Session Length:** 6.7 min average
+• **D7 Retention:** 45%
 
 **AI Performance:**
 • 40% reduction in time to find relevant content
 • 89% summarization accuracy (human evaluation)
 • 84% recommendation relevance ("helpful" rating)
-• 2% hallucination rate (down from 15%)
+• 2% hallucination rate (down from 15% in early beta)
 
 **Scale & Efficiency:**
 • Scaled to **50K users** in 6 months
@@ -534,13 +532,13 @@ Beta feedback revealed users didn't trust black-box recommendations.
 • Mobile performance: 89% of opens loaded <800ms
 
 **Product Outcomes:**
-✅ **Became Wareline's flagship AI product:** Client renewed for 2 years, signed 3 additional media clients using this case study
+✅ **Became Wareline's flagship AI product:** Signed 3 media companies as clients using this platform as proof of capability
 ✅ **Extensible architecture:** Enabled 12+ months of features (category customization, smart notifications, personalized newsletters) without rebuilds
 ✅ **User satisfaction:** NPS +42, beta feedback: "Finally a news app that feels like it knows me"
 
 **Key Learnings:**
 • **Cold-start solved through product thinking:** Hybrid recommendations delivered value Day 1 while improving over time — no "wait 6 months" dead zone
-• **Transparency > accuracy for trust:** "Why this article?" feature built more trust than improving algorithm 85% → 89%
+• **Transparency > accuracy for trust:** "Why this article?" feature built more trust than improving algorithm accuracy alone
 • **Strategic AI spending:** Hybrid LLM approach (premium AI where it matters) delivered quality experience within budget`
         }
       },
