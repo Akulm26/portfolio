@@ -267,7 +267,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
         )}
 
         {/* Section Header */}
-        <div className="text-left mb-20 lg:mb-28">
+        <div className="text-center mb-20 lg:mb-28">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
             Work That Moves Metrics
           </h2>
@@ -276,7 +276,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
               Professional Experience
             </span>
           </div>
-          <p className="text-xl text-slate-400 max-w-3xl leading-relaxed font-light">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
             From AI-powered personalization to predictive analytics at scale — each role shaped how I turn data into product decisions that drive measurable impact.
           </p>
         </div>
