@@ -633,10 +633,53 @@ The hybrid model became the foundation for our personalization infrastructure. T
         subtitle: 'Established differentiated positioning and built analytics infrastructure from scratch',
         resumeBullet: 'Drove 20% revenue growth by establishing differentiated go-to-market positioning for target customer segments through competitive and user research.',
         star: {
-          situation: 'When I joined Seacan Overseas, it was an early-stage immigration startup with no clear market positioning or data visibility. Leads came through word-of-mouth, but conversions and pricing were inconsistent. The founders had no dashboard to track revenue, leads, or service performance — they were essentially flying blind. Competitors in the immigration consulting space were winning on price, but Seacan had no clear differentiator.',
-          task: 'As part of the Founder\'s Office, I was tasked with two objectives: (1) Define Seacan\'s unique market positioning through research, and (2) Build a measurement system to monitor growth and client funnel. Our target was 20% revenue growth within one quarter.',
-          action: 'For market research and positioning, I analyzed 15+ competitors and conducted interviews with 25 prospective clients. A key insight emerged: Tier-2 city users valued transparency over discounts — they wanted to understand the process, not just get the cheapest price. I re-positioned Seacan as "an immigration partner offering transparent, step-by-step guidance." For the marketing funnel, I designed a CRM-based pipeline (Inquiry → Consultation → Converted) and tested two ad messages: "Apply Now" vs. "Transparent Timelines." The trust-based messaging lifted conversion by 24%. For analytics, I built a dashboard tracking lead source, country interest, funnel stage, consultant name, package type, payment received, processing time, and client satisfaction. I calculated Average Ticket Size (Total Revenue ÷ Converted Clients) to measure per-client yield, and added CAC and Cost-per-Lead metrics for channel ROI visibility. We reviewed dashboards weekly with founders and trained counselors on top client queries.',
-          result: 'Revenue increased 20.6% quarter-over-quarter, driven by conversion rate improvement from 18% to 26%. Average Ticket Size rose 12%, showing better upsells and pricing discipline. Client satisfaction improved 25%, and processing time decreased 15%. Seacan secured its Tier-2 market position and achieved 2x lead volume growth.'
+          situation: `Seacan Overseas, an early-stage immigration startup, operated without clear market positioning or data infrastructure. The business relied entirely on word-of-mouth leads with inconsistent conversion rates and ad-hoc pricing. The founders lacked visibility into core metrics—revenue, lead sources, conversion funnels, or service performance. In a commoditized market where competitors competed primarily on price, Seacan had no defensible differentiator or systematic way to measure what was working.`,
+          task: `As part of the Founder's Office, I owned two critical objectives:
+
+Define market positioning: Identify Seacan's unique value proposition through competitive analysis and user research
+Build measurement infrastructure: Establish analytics systems to track growth, optimize the client funnel, and enable data-driven decisions
+
+Success metric: 20% revenue growth within one quarter while improving unit economics and customer satisfaction.`,
+          action: `Discovery & Positioning
+
+Competitive Intelligence: Analyzed 15+ competitors across pricing models, service offerings, messaging, and customer reviews to map the competitive landscape
+User Research: Conducted 25 in-depth interviews with prospective clients (primarily from Tier-2 cities) to understand decision criteria, pain points, and unmet needs
+Key Insight: Tier-2 users didn't optimize for lowest price—they valued transparency and process clarity. They wanted to understand timelines, requirements, and next steps, not just the cheapest quote
+Strategic Repositioning: Pivoted from price-based competition to positioning Seacan as "your immigration partner offering transparent, step-by-step guidance"—addressing the emotional anxiety and information asymmetry in immigration decisions
+
+Experimentation & Validation
+
+Funnel Design: Structured a CRM-based pipeline (Inquiry → Consultation → Converted) to standardize tracking and identify drop-off points
+Message Testing: A/B tested acquisition messaging—"Apply Now" (transactional) vs. "Transparent Timelines" (trust-based)
+Result: Trust-based messaging increased conversion rates by 24%, validating the positioning hypothesis
+
+Analytics Infrastructure
+Built a comprehensive growth dashboard tracking:
+
+Acquisition: Lead source, lead volume, CAC, cost-per-lead by channel
+Conversion: Funnel stage progression, conversion rate, consultant performance
+Monetization: Revenue, Average Ticket Size (Total Revenue ÷ Converted Clients), package mix, payment status
+Product Quality: Processing time, client satisfaction scores, country/visa type distribution
+Operational Excellence: Consultant efficiency, time-to-close, bottleneck identification
+
+Adoption: Established weekly reviews with founders to drive accountability and trained counselors on addressing top customer objections identified through research.`,
+          result: `Business Impact
+
+20.6% QoQ revenue growth—exceeding target while improving unit economics
+Conversion rate: 18% → 26% (+44% relative improvement)
+Average Ticket Size: +12%—driven by better pricing discipline and upselling based on customer value segmentation
+Lead volume: 2x growth driven by optimized channel allocation and messaging
+
+Product & Experience
+
+Customer satisfaction: +25% improvement
+Processing time: -15% reduction, enabling faster time-to-value
+Market position: Established Seacan as the transparent, customer-centric choice in Tier-2 markets
+
+Strategic Foundation
+
+Created repeatable frameworks for positioning decisions and growth measurement that scaled beyond my tenure
+Enabled data-driven resource allocation, replacing intuition-based decisions with metric-driven prioritization`
         }
       },
       {
