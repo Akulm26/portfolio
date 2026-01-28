@@ -99,7 +99,7 @@ export const CAPABILITIES: Capability[] = [
     title: 'AI Product Development',
     description: 'I define how AI features should work for real users—from recommendation engines to personalized content feeds. I specialize in bridging the gap between raw model outputs and meaningful user experiences.',
     proof: 'Hands-on experience with LLMs & RAG systems'
-  }, 
+  },
   {
     title: 'Growth & Retention',
     description: 'I diagnose what\'s breaking in your user journey and run high-velocity experiments that move the numbers. I\'ve turned declining user engagement into measurable lifts by identifying high-leverage friction points.',
@@ -636,50 +636,50 @@ The hybrid model became the foundation for our personalization infrastructure. T
           situation: `Seacan Overseas, an early-stage immigration startup, operated without clear market positioning or data infrastructure. The business relied entirely on word-of-mouth leads with inconsistent conversion rates and ad-hoc pricing. The founders lacked visibility into core metrics—revenue, lead sources, conversion funnels, or service performance. In a commoditized market where competitors competed primarily on price, Seacan had no defensible differentiator or systematic way to measure what was working.`,
           task: `As part of the Founder's Office, I owned two critical objectives:
 
-Define market positioning: Identify Seacan's unique value proposition through competitive analysis and user research
-Build measurement infrastructure: Establish analytics systems to track growth, optimize the client funnel, and enable data-driven decisions
+• **Define market positioning:** Identify Seacan's unique value proposition through competitive analysis and user research
+• **Build measurement infrastructure:** Establish analytics systems to track growth, optimize the client funnel, and enable data-driven decisions
 
-Success metric: 20% revenue growth within one quarter while improving unit economics and customer satisfaction.`,
-          action: `Discovery & Positioning
+**Success metric:** 20% revenue growth within one quarter while improving unit economics and customer satisfaction.`,
+          action: `**1. Discovery & Positioning**
 
-Competitive Intelligence: Analyzed 15+ competitors across pricing models, service offerings, messaging, and customer reviews to map the competitive landscape
-User Research: Conducted 25 in-depth interviews with prospective clients (primarily from Tier-2 cities) to understand decision criteria, pain points, and unmet needs
-Key Insight: Tier-2 users didn't optimize for lowest price—they valued transparency and process clarity. They wanted to understand timelines, requirements, and next steps, not just the cheapest quote
-Strategic Repositioning: Pivoted from price-based competition to positioning Seacan as "your immigration partner offering transparent, step-by-step guidance"—addressing the emotional anxiety and information asymmetry in immigration decisions
+• **Competitive Intelligence:** Analyzed 15+ competitors across pricing models, service offerings, messaging, and customer reviews to map the competitive landscape
+• **User Research:** Conducted 25 in-depth interviews with prospective clients (primarily from Tier-2 cities) to understand decision criteria, pain points, and unmet needs
+• **Key Insight:** Tier-2 users didn't optimize for lowest price—they valued transparency and process clarity. They wanted to understand timelines, requirements, and next steps, not just the cheapest quote
+• **Strategic Repositioning:** Pivoted from price-based competition to positioning Seacan as "your immigration partner offering transparent, step-by-step guidance"—addressing the emotional anxiety and information asymmetry in immigration decisions
 
-Experimentation & Validation
+**2. Experimentation & Validation**
 
-Funnel Design: Structured a CRM-based pipeline (Inquiry → Consultation → Converted) to standardize tracking and identify drop-off points
-Message Testing: A/B tested acquisition messaging—"Apply Now" (transactional) vs. "Transparent Timelines" (trust-based)
-Result: Trust-based messaging increased conversion rates by 24%, validating the positioning hypothesis
+• **Funnel Design:** Structured a CRM-based pipeline (Inquiry → Consultation → Converted) to standardize tracking and identify drop-off points
+• **Message Testing:** A/B tested acquisition messaging—"Apply Now" (transactional) vs. "Transparent Timelines" (trust-based)
+• **Result:** Trust-based messaging increased conversion rates by 24%, validating the positioning hypothesis
 
-Analytics Infrastructure
+**3. Analytics Infrastructure**
 Built a comprehensive growth dashboard tracking:
 
-Acquisition: Lead source, lead volume, CAC, cost-per-lead by channel
-Conversion: Funnel stage progression, conversion rate, consultant performance
-Monetization: Revenue, Average Ticket Size (Total Revenue ÷ Converted Clients), package mix, payment status
-Product Quality: Processing time, client satisfaction scores, country/visa type distribution
-Operational Excellence: Consultant efficiency, time-to-close, bottleneck identification
+• **Acquisition:** Lead source, lead volume, CAC, cost-per-lead by channel
+• **Conversion:** Funnel stage progression, conversion rate, consultant performance
+• **Monetization:** Revenue, Average Ticket Size (Total Revenue ÷ Converted Clients), package mix, payment status
+• **Product Quality:** Processing time, client satisfaction scores, country/visa type distribution
+• **Operational Excellence:** Consultant efficiency, time-to-close, bottleneck identification
 
-Adoption: Established weekly reviews with founders to drive accountability and trained counselors on addressing top customer objections identified through research.`,
-          result: `Business Impact
+**4. Adoption:** Established weekly reviews with founders to drive accountability and trained counselors on addressing top customer objections identified through research.`,
+          result: `**Business Impact**
 
-20.6% QoQ revenue growth—exceeding target while improving unit economics
-Conversion rate: 18% → 26% (+44% relative improvement)
-Average Ticket Size: +12%—driven by better pricing discipline and upselling based on customer value segmentation
-Lead volume: 2x growth driven by optimized channel allocation and messaging
+• **20.6% QoQ revenue growth**—exceeding target while improving unit economics
+• **Conversion rate:** 18% → 26% (+44% relative improvement)
+• **Average Ticket Size:** +12%—driven by better pricing discipline and upselling based on customer value segmentation
+• **Lead volume:** 2x growth driven by optimized channel allocation and messaging
 
-Product & Experience
+**Product & Experience**
 
-Customer satisfaction: +25% improvement
-Processing time: -15% reduction, enabling faster time-to-value
-Market position: Established Seacan as the transparent, customer-centric choice in Tier-2 markets
+• **Customer satisfaction:** +25% improvement
+• **Processing time:** -15% reduction, enabling faster time-to-value
+• **Market position:** Established Seacan as the transparent, customer-centric choice in Tier-2 markets
 
-Strategic Foundation
+**Strategic Foundation**
 
-Created repeatable frameworks for positioning decisions and growth measurement that scaled beyond my tenure
-Enabled data-driven resource allocation, replacing intuition-based decisions with metric-driven prioritization`
+• Created repeatable frameworks for positioning decisions and growth measurement that scaled beyond my tenure
+• Enabled data-driven resource allocation, replacing intuition-based decisions with metric-driven prioritization`
         }
       },
       {
