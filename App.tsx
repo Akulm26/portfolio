@@ -887,7 +887,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-xl text-text-secondary mb-10 max-w-xl leading-relaxed">
-            Analytics professional turned product manager. 4+ years shipping features across media, fitness, and consumer technology - driving measurable growth through intelligent personalization and data-driven product decisions.
+            Product Manager specializing in Applied AI for consumer experiences. 4+ years shipping LLM-powered content tools, personalized recommendation systems, and predictive features to 100M+ users across media, fitness, and consumer tech—consistently improving engagement and retention through rigorous experimentation.
           </p>
 
         </div>
