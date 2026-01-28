@@ -267,16 +267,16 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
         )}
 
         {/* Section Header */}
-        <div className="text-center mb-20 lg:mb-28">
+        <div className="text-left mb-20 lg:mb-28">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
+            Work That Moves Metrics
+          </h2>
           <div className="inline-block mb-8">
             <span className="px-6 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">
               Professional Experience
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-10 tracking-tight leading-[1.1]">
-            Work That Moves Metrics
-          </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-xl text-slate-400 max-w-3xl leading-relaxed font-light">
             From AI-powered personalization to predictive analytics at scale — each role shaped how I turn data into product decisions that drive measurable impact.
           </p>
         </div>
