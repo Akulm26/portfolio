@@ -268,7 +268,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
 
         {/* Section Header */}
         <div className="mb-20 lg:mb-28">
-          <div className="text-left mb-6">
+          <div className="text-right mb-6">
             <span className="px-6 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">
               Professional Experience
             </span>
