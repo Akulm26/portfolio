@@ -251,9 +251,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Back Button */}
+        {/* Back Button and Badge Row */}
         {onBack && (
-          <div className="mb-12">
+          <div className="flex items-center justify-between mb-12">
             <button
               onClick={onBack}
               className="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-all duration-300"
@@ -263,16 +263,14 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ onBack }) => {
               </div>
               <span className="font-medium">Back to Portfolio</span>
             </button>
+            <span className="px-6 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">
+              Professional Experience
+            </span>
           </div>
         )}
 
         {/* Section Header */}
         <div className="mb-20 lg:mb-28">
-          <div className="text-right mb-4">
-            <span className="px-6 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">
-              Professional Experience
-            </span>
-          </div>
           <h2 className="text-center text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
             Work That Moves Metrics
           </h2>
