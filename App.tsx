@@ -882,7 +882,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div className="order-1 md:order-1">
           <h1 className="font-display text-5xl md:text-7xl font-extrabold text-text-primary leading-[1.1] mb-6 tracking-tight">
-            <span className="block mb-4">Hi, I'm Akul!</span>
+            <span className="block mb-8">Hi, I'm Akul!</span>
             I build AI-powered products that <span className="text-accent italic">people actually use.</span>
           </h1>
 
